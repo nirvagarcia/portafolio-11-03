@@ -40,7 +40,7 @@ export function HeroSection() {
             </motion.div>
 
             <motion.h1
-              className="text-hero-title font-bold leading-tight"
+              className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}

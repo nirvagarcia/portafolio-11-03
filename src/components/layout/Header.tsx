@@ -38,15 +38,13 @@ export function Header({ locale }: HeaderProps) {
       )}
     >
       <Container>
-        <div
-          className={cn(
-            'flex items-center justify-between transition-all duration-300',
-            isScrolled && 'glass-card rounded-full px-6 py-3'
-          )}
-        >
+        <div className="flex items-center justify-between transition-all duration-300">
           <Link
             href={`/${locale}`}
-            className="flex items-center gap-2 text-foreground transition-colors hover:text-glow-primary"
+            className={cn(
+              'flex items-center gap-2 text-foreground transition-all hover:text-glow-primary',
+              isScrolled && 'glass-card rounded-full px-4 py-3'
+            )}
             aria-label="Home"
           >
             <Home className="h-5 w-5" />
@@ -54,7 +52,12 @@ export function Header({ locale }: HeaderProps) {
 
           <Navbar locale={locale} />
 
-          <div className="flex items-center gap-2">
+          <div
+            className={cn(
+              'flex items-center gap-2 transition-all',
+              isScrolled && 'glass-card rounded-full px-4 py-3'
+            )}
+          >
             <ThemeToggle />
             <LanguageSwitcher currentLocale={locale} />
 

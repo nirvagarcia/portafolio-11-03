@@ -49,6 +49,139 @@
     "success": "Mensagem enviada com sucesso!",
     "error": "Falha ao enviar mensagem. Por favor, tente novamente."
   },
+  "projects": {
+    "title": "Trabalho em Destaque",
+    "subtitle": "Projetos",
+    "description": "Uma vitrine dos meus projetos mais impactantes, combinando tecnologia de ponta com design inovador.",
+    "history": "História",
+    "viewCode": "Ver código",
+    "viewDemo": "Ver demo",
+    "viewAll": "Ver todos os projetos",
+    "filterByName": "Filtrar por nome",
+    "filterByTech": "Filtrar por tecnologia",
+    "allProjects": "Todos os Projetos",
+    "noResults": "Nenhum projeto encontrado",
+    "tryAdjusting": "Tente ajustar seus filtros ou pesquisa",
+    "clearFilters": "Limpar filtros",
+    "previous": "Página anterior",
+    "next": "Próxima página"
+  },
+  "bridge": {
+    "description": "Tradução de Linguagem de Sinais Peruana (LSP) para texto e voz usando Machine Learning e Ferramentas de Gen AI."
+  },
+  "rentstate": {
+    "description": "Aluguel de imóveis em Lima, Peru com chatbots e API do Google Maps para radares de habitação."
+  },
+  "akira": {
+    "description": "Plataforma E-commerce de produtos asiáticos com design moderno e checkout sem fricções."
+  },
+  "cosmos": {
+    "description": "Aplicativo móvel multiplataforma para entusiastas da exploração espacial."
+  },
+  "nebula": {
+    "description": "Criando dashboards web profundos, de alto desempenho e intuitivos."
+  },
+  "quantum": {
+    "description": "Criando experiências web profundas e de alto desempenho."
+  },
+  "helios": {
+    "description": "Criando experiências web precisas e de alto desempenho."
+  },
+  "aurora": {
+    "description": "Plataforma de análise de dados com IA e insights em tempo real."
+  },
+  "phoenix": {
+    "description": "Solução e-commerce full-stack com gestão avançada de inventário."
+  },
+  "stack": {
+    "title": "Stack Tecnológico",
+    "subtitle": "Meu arsenal de ferramentas e tecnologias organizadas em camadas arquiteturais. Clique em qualquer tecnologia para explorar casos de uso reais e exemplos de código.",
+    "cta": "Explore meu stack tecnológico.",
+    "clickToExplore": "Clique em qualquer tecnologia para ver detalhes.",
+    "layers": {
+      "ai": "AI & Agents Layer",
+      "core": "Core Application Layer",
+      "data": "Data Layer",
+      "infrastructure": "Infrastructure & DevOps Layer"
+    },
+    "langchain": {
+      "narrative": "Implementando LangChain para orquestrar agentes de IA avançados e sistemas RAG. Usado no Bridge para coordenar modelos de linguagem com bancos de dados vetoriais, permitindo respostas contextuais e memória de conversação. Facilita chains complexas que combinam recuperação de informação, processamento de linguagem natural e geração de respostas."
+    },
+    "openai": {
+      "narrative": "Integrando OpenAI API para capacidades de IA generativa de última geração. Implementado em múltiplos projetos como Bridge para tradução de LSP para texto e sistemas de chat conversacional. Utilizo GPT-4 Turbo para tarefas complexas de compreensão e geração de linguagem natural, aproveitando capacidades de function calling e streaming."
+    },
+    "huggingface": {
+      "narrative": "Utilizando Hugging Face para acessar modelos de ML pré-treinados e fine-tuning de transformers. Plataforma essencial para experimentação com modelos open-source, embeddings de texto e deployment de modelos custom. Implementado em pipelines de NLP para classificação, análise de sentimentos e extração de informação."
+    },
+    "nextjs": {
+      "narrative": "Next.js 15 com App Router é meu framework principal para aplicações web modernas. Aproveito Server Components para otimizar o carregamento inicial, Server Actions para mutações sem API endpoints, e o sistema de roteamento baseado em arquivos. Implemento SSR, ISR e SSG conforme as necessidades de cada projeto, alcançando experiências ultra-rápidas com SEO otimizado."
+    },
+    "react": {
+      "narrative": "React como base para construir interfaces de usuário componíveis e reativas. Domínio de hooks (useState, useEffect, useCallback, useMemo) para gestão de estado e efeitos colaterais. Implemento patterns como compound components, render props e custom hooks para criar código reutilizável e mantível. Experiência com Context API e libraries de gestão de estado."
+    },
+    "typescript": {
+      "narrative": "TypeScript como linguagem principal para desenvolvimento frontend e backend, garantindo type safety e melhor developer experience. Utilizo tipos avançados (generics, conditional types, mapped types), interfaces robustas e strict mode para prevenir bugs durante o desenvolvimento. Implemento type guards, utility types e custom types para APIs type-safe."
+    },
+    "fastapi": {
+      "narrative": "FastAPI para construir APIs de alto desempenho com Python. Framework ideal para projetos de ML/AI graças à sua excelente integração com o ecossistema Python. Implemento endpoints async para máxima concorrência, validação automática com Pydantic, documentação auto-gerada com OpenAPI, e dependency injection para código limpo e testável."
+    },
+    "nestjs": {
+      "narrative": "NestJS para arquiteturas backend escaláveis e mantíveis com TypeScript. Aproveito seu sistema de módulos, dependency injection e decorators para construir aplicações enterprise-grade. Implemento guards para autenticação, interceptors para logging, pipes para validação e filters para tratamento de erros. Ideal para microserviços e APIs GraphQL."
+    },
+    "python": {
+      "narrative": "Python como linguagem principal para Machine Learning, Data Science e APIs backend. Experiência profunda com o ecossistema científico (NumPy, Pandas, Scikit-learn) e frameworks de deep learning. Código limpo seguindo PEP 8, type hints para melhor manutenibilidade, e async/await para operações concorrentes."
+    },
+    "nodejs": {
+      "narrative": "Node.js como runtime para JavaScript backend, permitindo desenvolvimento full-stack com uma única linguagem. Experiência com event loop, streams e otimização de performance. Implemento arquiteturas escaláveis com clustering, manipulação eficiente de I/O assíncrono, e aproveito o rico ecossistema do npm."
+    },
+    "postgresql": {
+      "narrative": "PostgreSQL como banco de dados relacional principal para aplicações em produção. Expertise em design de schemas complexos, índices otimizados, queries avançadas com CTEs e window functions. Implemento extensões como PostGIS para dados geoespaciais no Rentstate, json/jsonb para dados semi-estruturados, e full-text search. Competente em tuning de performance e estratégias de backup."
+    },
+    "prisma": {
+      "narrative": "Prisma como ORM moderno para TypeScript, oferecendo type-safety completo desde o banco de dados até a aplicação. Utilizo Prisma Client para queries type-safe, Prisma Migrate para controle de versões de schema, e Prisma Studio para administração visual. Implemento relações complexas, cascatas e otimizações com select/include estratégicos."
+    },
+    "chromadb": {
+      "narrative": "ChromaDB como banco de dados vetorial para sistemas RAG (Retrieval-Augmented Generation) e semantic search. Implementado no Bridge para armazenar embeddings de documentos LSP e realizar buscas de similaridade ultra-rápidas. Permite combinar memória de longo prazo com capacidades de IA generativa, fundamental para agentes conversacionais contextuais."
+    },
+    "redis": {
+      "narrative": "Redis para caching de alto desempenho, sessões de usuário e pub/sub em tempo real. Implemento estratégias de cache-aside, write-through e rate limiting. Utilizado para reduzir latência em consultas frequentes, armazenar tokens de sessão e como message broker para arquiteturas event-driven."
+    },
+    "docker": {
+      "narrative": "Docker para containerização e consistência entre ambientes de desenvolvimento e produção. Crio Dockerfiles otimizados com multi-stage builds para reduzir tamanho de imagens. Implemento docker-compose para orquestração local de microserviços, configuração de redes e volumes. CI/CD integrado com build automatizado e deployment para cloud."
+    },
+    "vercel": {
+      "narrative": "Vercel como plataforma de deployment para aplicações Next.js com zero-config. Aproveito edge functions para latência mínima global, preview deployments para cada PR, e analytics integrado. Configuração de domínios custom, variáveis de ambiente por ambiente, e rollbacks instantâneos. Ideal para frontend moderno com DX excepcional."
+    },
+    "gcp": {
+      "narrative": "Google Cloud Platform para infraestrutura production-grade. Experiência com Cloud Run para containers serverless, Cloud SQL para databases gerenciadas, Cloud Storage para assets estáticos, e Cloud Build para CI/CD. Implemento arquiteturas escaláveis com load balancing, auto-scaling e monitoramento com Cloud Logging e Monitoring."
+    },
+    "git": {
+      "narrative": "Git como sistema de controle de versões para colaboração e gestão de código fonte. Domínio de workflows avançados com feature branches, rebasing, cherry-picking e conflict resolution. Implemento conventional commits, pre-commit hooks com Husky e lint-staged, e estratégias de branching como Git Flow ou trunk-based development."
+    },
+    "githubActions": {
+      "narrative": "GitHub Actions para CI/CD automatizado e workflows personalizados. Crio pipelines que executam testes, linting, build e deployment automático em cada push. Implemento matrix builds para testing cross-platform, caching de dependencies para velocidade, e secrets management seguro. Integração com Vercel, GCP e outros serviços cloud."
+    },
+    "usage": {
+      "bridge": "Bridge (Tradução LSP)",
+      "aiRag": "Sistemas AI RAG (2026)",
+      "mlModels": "Modelos ML custom",
+      "portfolio": "Este Portfólio",
+      "rentstate": "Rentstate (Imobiliária)",
+      "allProjects": "Todos os projetos",
+      "apis": "APIs backend",
+      "production": "Apps em produção",
+      "typeorm": "ORMs type-safe",
+      "rag": "Sistemas RAG",
+      "caching": "Cache distribuído",
+      "sessions": "Gestão de sessões",
+      "mlApis": "APIs de ML",
+      "mlProjects": "Projetos de ML/AI",
+      "backend": "Serviços backend",
+      "nextjs": "Projetos Next.js",
+      "cicd": "CI/CD pipelines",
+      "frontend": "Frontend apps"
+    }
+  },
   "common": {
     "loading": "Carregando...",
     "error": "Algo deu errado"
