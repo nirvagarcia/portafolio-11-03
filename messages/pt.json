@@ -1,0 +1,56 @@
+{
+  "nav": {
+    "home": "Início",
+    "projects": "Projetos",
+    "stack": "Stack",
+    "about": "Sobre mim",
+    "contact": "Contato"
+  },
+  "hero": {
+    "name": "Nirvana Garcia",
+    "role": "Engenheira de AI & Software",
+    "headline": "Construindo soluções inteligentes para os desafios de amanhã",
+    "subheadline": "Criando experiências de software premium com IA de ponta e tecnologias web modernas",
+    "cta": "Explorar Portfólio"
+  },
+  "theme": {
+    "toggle": "Alternar tema",
+    "light": "Modo claro",
+    "dark": "Modo escuro"
+  },
+  "language": {
+    "select": "Selecionar idioma"
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "subtitle": "Vamos trabalhar juntos no seu próximo projeto",
+    "form": {
+      "name": "Nome",
+      "namePlaceholder": "Seu nome",
+      "email": "E-mail",
+      "emailPlaceholder": "seu.email@exemplo.com",
+      "subject": "Assunto",
+      "subjectPlaceholder": "Sobre o que é?",
+      "message": "Mensagem",
+      "messagePlaceholder": "Conte-me sobre seu projeto...",
+      "submit": "Enviar Mensagem",
+      "sending": "Enviando..."
+    },
+    "validation": {
+      "nameRequired": "Nome é obrigatório",
+      "nameMin": "O nome deve ter pelo menos 2 caracteres",
+      "emailRequired": "E-mail é obrigatório",
+      "emailInvalid": "Endereço de e-mail inválido",
+      "subjectRequired": "Assunto é obrigatório",
+      "subjectMin": "O assunto deve ter pelo menos 5 caracteres",
+      "messageRequired": "Mensagem é obrigatória",
+      "messageMin": "A mensagem deve ter pelo menos 10 caracteres"
+    },
+    "success": "Mensagem enviada com sucesso!",
+    "error": "Falha ao enviar mensagem. Por favor, tente novamente."
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Algo deu errado"
+  }
+}

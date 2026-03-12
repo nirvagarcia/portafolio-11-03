@@ -1,0 +1,56 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "stack": "Stack",
+    "about": "Sobre mí",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "name": "Nirvana Garcia",
+    "role": "Ingeniera AI & Software",
+    "headline": "Construyendo soluciones inteligentes para los desafíos del mañana",
+    "subheadline": "Creando experiencias de software premium con IA de vanguardia y tecnologías web modernas",
+    "cta": "Explorar Portafolio"
+  },
+  "theme": {
+    "toggle": "Cambiar tema",
+    "light": "Modo claro",
+    "dark": "Modo oscuro"
+  },
+  "language": {
+    "select": "Seleccionar idioma"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Trabajemos juntos en tu próximo proyecto",
+    "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "tu.correo@ejemplo.com",
+      "subject": "Asunto",
+      "subjectPlaceholder": "¿De qué se trata?",
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntame sobre tu proyecto...",
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando..."
+    },
+    "validation": {
+      "nameRequired": "El nombre es obligatorio",
+      "nameMin": "El nombre debe tener al menos 2 caracteres",
+      "emailRequired": "El correo electrónico es obligatorio",
+      "emailInvalid": "Dirección de correo electrónico inválida",
+      "subjectRequired": "El asunto es obligatorio",
+      "subjectMin": "El asunto debe tener al menos 5 caracteres",
+      "messageRequired": "El mensaje es obligatorio",
+      "messageMin": "El mensaje debe tener al menos 10 caracteres"
+    },
+    "success": "¡Mensaje enviado con éxito!",
+    "error": "Error al enviar el mensaje. Por favor, inténtalo de nuevo."
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Algo salió mal"
+  }
+}
