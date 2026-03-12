@@ -2,20 +2,20 @@ export interface Tech {
   id: string;
   name: string;
   category: string;
-  layer: 'ai' | 'core' | 'data' | 'infrastructure';
-  icon?: string; // Optional icon name or emoji
-  usageExamples: string[]; // Translation keys for projects/examples
-  narrative: string; // Translation key for description
+  layer: 'ai' | 'frontend' | 'backend' | 'data' | 'infrastructure' | 'testing';
+  icon?: string;
+  usageExamples: string[];
+  narrative: string;
   codePreview?: {
     language: string;
     code: string;
   };
-  connections?: string[]; // IDs of connected techs
+  connections?: string[];
 }
 
 export interface StackLayer {
-  id: 'ai' | 'core' | 'data' | 'infrastructure';
-  name: string; // Translation key
+  id: 'ai' | 'frontend' | 'backend' | 'data' | 'infrastructure' | 'testing';
+  name: string;
   techs: Tech[];
   position: 'top' | 'middle-top' | 'middle-bottom' | 'bottom';
 }

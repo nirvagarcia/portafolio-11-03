@@ -29,7 +29,6 @@ export function ContactForm() {
 
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
-    // TODO: Implement actual form submission
     console.warn('Form submitted:', data);
 
     reset();

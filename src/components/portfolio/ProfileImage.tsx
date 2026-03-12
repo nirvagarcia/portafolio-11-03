@@ -15,7 +15,7 @@ export function ProfileImage() {
           {isLoading && <div className="absolute inset-0 animate-pulse bg-surface-elevated" />}
 
           <Image
-            src="/images/profile.webp"
+            src="/images/nirvana-hero.png"
             alt="Nirvana Garcia"
             fill
             priority

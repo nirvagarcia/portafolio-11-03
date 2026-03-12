@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Mic } from 'lucide-react';
+import { X, Github } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import type { Tech } from '@/shared/types/stack';
@@ -15,9 +15,9 @@ interface TechDetailModalProps {
 
 export function TechDetailModal({ tech, isOpen, onClose }: TechDetailModalProps) {
   const t = useTranslations();
-  const [narrativeExpanded, setNarrativeExpanded] = React.useState(false);
+  const tModal = useTranslations('techModal');
+  const [expandedUsage, setExpandedUsage] = React.useState<number | null>(null);
 
-  // Close on Escape key
   React.useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -32,18 +32,14 @@ export function TechDetailModal({ tech, isOpen, onClose }: TechDetailModalProps)
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop with blur */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={onClose}
-            className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md"
-          />
-
-          {/* Modal Container */}
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-md"
+          >
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -52,7 +48,6 @@ export function TechDetailModal({ tech, isOpen, onClose }: TechDetailModalProps)
               className="relative w-full max-w-4xl overflow-hidden rounded-2xl bg-surface-elevated shadow-2xl ring-1 ring-border/50"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Header - Mac Style */}
               <div className="flex items-center justify-between border-b border-border/50 bg-surface/80 px-6 py-4 backdrop-blur-sm">
                 <div className="flex items-center gap-3">
                   <div className="flex gap-1.5">
@@ -60,7 +55,7 @@ export function TechDetailModal({ tech, isOpen, onClose }: TechDetailModalProps)
                     <div className="h-3 w-3 rounded-full bg-yellow-500/80" />
                     <div className="h-3 w-3 rounded-full bg-green-500/80" />
                   </div>
-                  <h2 className="text-lg font-semibold tracking-tight">Tech Detail</h2>
+                  <h2 className="text-lg font-semibold tracking-tight">{tModal('title')}</h2>
                 </div>
                 <button
                   onClick={onClose}
@@ -71,13 +66,28 @@ export function TechDetailModal({ tech, isOpen, onClose }: TechDetailModalProps)
                 </button>
               </div>
 
-              {/* Content - Scrollable */}
               <div className="max-h-[calc(100vh-200px)] overflow-y-auto p-6">
                 <div className="space-y-6">
-                  {/* Selected Tech */}
+                  <div className="flex items-center gap-3 rounded-xl bg-gradient-to-br from-surface/80 to-surface/40 p-3 ring-1 ring-border/40 backdrop-blur-sm">
+                    <div className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-purple-500/40 ring-offset-2 ring-offset-surface">
+                      <Image
+                        src="/images/nirvana-github.png"
+                        alt="Nirvana Garcia"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-base font-semibold">Nirvana Garcia</p>
+                      <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                        <Github className="h-3 w-3" />
+                        <span>{tModal('role')}</span>
+                      </div>
+                    </div>
+                  </div>
+
                   <div>
-                    <p className="text-sm font-medium text-muted-foreground">Selected:</p>
-                    <h3 className="mt-1 text-2xl font-bold text-glow-primary">
+                    <h3 className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-2xl font-bold text-transparent dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400">
                       {tech.name}{' '}
                       <span className="text-lg font-normal text-muted-foreground">
                         ({tech.category})
@@ -85,94 +95,67 @@ export function TechDetailModal({ tech, isOpen, onClose }: TechDetailModalProps)
                     </h3>
                   </div>
 
-                  {/* Usage Examples */}
                   <div>
-                    <p className="text-sm font-medium text-muted-foreground">
+                    <p className="mb-3 text-sm font-medium text-muted-foreground">
                       Usage <span className="font-normal">(selected examples):</span>
                     </p>
-                    <ol className="mt-2 space-y-1 pl-5 text-sm">
+                    <div className="space-y-2">
                       {tech.usageExamples.map((example, index) => (
-                        <li key={index} className="list-decimal text-foreground/90">
-                          {t(example)}
-                        </li>
-                      ))}
-                    </ol>
-                  </div>
-
-                  {/* Narrative */}
-                  <div>
-                    <button
-                      onClick={() => setNarrativeExpanded(!narrativeExpanded)}
-                      className="group flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-                    >
-                      Narrative{' '}
-                      <span className="text-xs font-normal">
-                        (click to {narrativeExpanded ? 'collapse' : 'expand'}):
-                      </span>
-                      <motion.svg
-                        animate={{ rotate: narrativeExpanded ? 180 : 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="h-4 w-4"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </motion.svg>
-                    </button>
-                    <AnimatePresence>
-                      {narrativeExpanded && (
-                        <motion.p
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3 }}
-                          className="mt-2 overflow-hidden text-sm leading-relaxed text-foreground/80"
+                        <div
+                          key={index}
+                          className="overflow-hidden rounded-lg border border-border/50 bg-surface/30 transition-all hover:border-purple-500/50"
                         >
-                          {t(tech.narrative)}
-                        </motion.p>
-                      )}
-                    </AnimatePresence>
-                    {!narrativeExpanded && (
-                      <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-foreground/80">
-                        {t(tech.narrative)}
-                      </p>
-                    )}
+                          <button
+                            onClick={() => setExpandedUsage(expandedUsage === index ? null : index)}
+                            className="group w-full p-3 text-left transition-all hover:bg-surface/60"
+                          >
+                            <div className="flex items-start gap-3">
+                              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-purple-500/10 text-xs font-bold text-purple-500">
+                                {index + 1}
+                              </span>
+                              <p className="flex-1 text-sm leading-relaxed text-foreground/90">
+                                {t(example)}
+                              </p>
+                              <motion.span
+                                animate={{ rotate: expandedUsage === index ? 180 : 0 }}
+                                transition={{ duration: 0.2 }}
+                                className="text-muted-foreground"
+                              >
+                                ▼
+                              </motion.span>
+                            </div>
+                          </button>
+                          <AnimatePresence>
+                            {expandedUsage === index && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: 'auto', opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.2 }}
+                                className="overflow-hidden"
+                              >
+                                <div className="border-t border-border/30 bg-surface/50 p-3 text-sm text-muted-foreground">
+                                  <p className="italic">
+                                    {tech.narrative
+                                      ? t(tech.narrative)
+                                      : 'Additional details about this usage example.'}
+                                  </p>
+                                </div>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+                      ))}
+                    </div>
                   </div>
 
-                  {/* Profile */}
-                  <div className="flex items-center gap-3 rounded-lg bg-surface/50 p-4 ring-1 ring-border/30">
-                    <div className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-glow-primary/30">
-                      <Image
-                        src="/images/profile.webp"
-                        alt="Nirvana Garcia"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div>
-                      <p className="font-semibold">Nirvana Garcia</p>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Mic className="h-3.5 w-3.5" />
-                        <span>AI & Software Engineer</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Code Preview */}
                   {tech.codePreview && (
                     <div>
                       <p className="mb-3 text-sm font-medium text-muted-foreground">
-                        Code Preview <span className="font-normal">(syntax highlight):</span>
+                        {tModal('codePreview')}{' '}
+                        <span className="font-normal">({tModal('syntaxHighlight')}):</span>
                       </p>
-                      {/* Mac-style Terminal Window */}
                       <div className="overflow-hidden rounded-xl bg-[#1E1E1E] ring-1 ring-white/10">
-                        {/* Terminal Header */}
                         <div className="flex items-center gap-2 border-b border-white/10 bg-[#2D2D2D] px-4 py-2.5">
                           <div className="flex gap-1.5">
                             <div className="h-3 w-3 rounded-full bg-[#FF5F57]" />
@@ -183,7 +166,6 @@ export function TechDetailModal({ tech, isOpen, onClose }: TechDetailModalProps)
                             {tech.codePreview.language}
                           </span>
                         </div>
-                        {/* Code Content */}
                         <div className="overflow-x-auto p-4">
                           <pre className="text-[13px] leading-relaxed">
                             <code className="font-mono text-[#D4D4D4]">
@@ -197,7 +179,7 @@ export function TechDetailModal({ tech, isOpen, onClose }: TechDetailModalProps)
                 </div>
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         </>
       )}
     </AnimatePresence>

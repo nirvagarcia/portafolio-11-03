@@ -21,12 +21,7 @@ export function ProjectsShowcase() {
           viewport={{ once: true }}
           className="mb-12 space-y-2"
         >
-          <h2 className="text-3xl font-light lg:text-3xl">
-            Proyectos Destacados{' '}
-            <span className="block text-2xl font-extralight text-muted-foreground/60 sm:inline sm:text-3xl lg:text-3xl">
-              (Made by @nirvagarcia)
-            </span>
-          </h2>
+          <h2 className="text-3xl font-light lg:text-3xl">{t('featuredProjects')}</h2>
         </motion.div>
 
         <div className="grid auto-rows-[380px] grid-cols-1 gap-8 sm:auto-rows-[400px] sm:gap-6 md:grid-cols-2 lg:auto-rows-[420px] lg:grid-cols-4">

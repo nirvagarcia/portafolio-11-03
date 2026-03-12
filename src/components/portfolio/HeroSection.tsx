@@ -86,6 +86,8 @@ export function HeroSection() {
           <div className="h-8 w-[2px] bg-gradient-to-b from-glow-primary/50 via-glow-secondary/30 to-transparent" />
         </motion.button>
       </motion.div>
+
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-32 bg-gradient-to-b from-transparent via-background/40 to-background" />
     </section>
   );
 }

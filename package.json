@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
+    "@xyflow/react": "^12.10.1",
     "clsx": "^2.1.0",
     "lucide-react": "^0.446.0",
     "motion": "^11.11.0",

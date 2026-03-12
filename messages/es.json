@@ -52,6 +52,7 @@
   "projects": {
     "title": "Trabajo Destacado",
     "subtitle": "Proyectos",
+    "featuredProjects": "Proyectos Destacados",
     "description": "Una muestra de mis proyectos más impactantes, combinando tecnología de vanguardia con diseño innovador.",
     "history": "Historia",
     "viewCode": "Ver código",
@@ -95,20 +96,27 @@
   },
   "stack": {
     "title": "Stack Tecnológico",
-    "subtitle": "Mi arsenal de herramientas y tecnologías organizadas en capas arquitectónicas. Haz clic en cualquier tecnología para explorar casos de uso reales y ejemplos de código.",
+    "subtitle": "Stack tecnológico de Nirvana organizado en capas arquitectónicas. Haz clic en cualquier tecnología para explorar mis casos de uso reales y ejemplos de código.",
     "cta": "Explora mi stack tecnológico.",
-    "clickToExplore": "Haz clic en cualquier tecnología para ver detalles.",
     "layers": {
       "ai": "AI & Agents Layer",
-      "core": "Core Application Layer",
+      "frontend": "Frontend Layer",
+      "backend": "Backend Layer",
       "data": "Data Layer",
-      "infrastructure": "Infrastructure & DevOps Layer"
+      "infrastructure": "Infrastructure & DevOps Layer",
+      "testing": "Testing Layer"
     },
     "langchain": {
       "narrative": "Implementando LangChain para orquestar agentes de IA avanzados y sistemas RAG. Utilizado en Bridge para coordinar modelos de lenguaje con bases de datos vectoriales, permitiendo respuestas contextuales y memoria de conversación. Facilita chains complejas que combinan recuperación de información, procesamiento de lenguaje natural y generación de respuestas."
     },
     "openai": {
       "narrative": "Integrando OpenAI API para capacidades de IA generativa de última generación. Implementado en múltiples proyectos como Bridge para traducción de LSP a texto, y en sistemas de chat conversacional. Utilizo GPT-4 Turbo para tareas complejas de comprensión y generación de lenguaje natural, aprovechando capacidades de function calling y streaming."
+    },
+    "watsonx": {
+      "narrative": "Utilizando IBM Watsonx para soluciones empresariales de IA. Plataforma robusta para entrenar, ajustar y desplegar modelos de ML a escala. Implemento pipelines de datos, modelos custom y gobernanza de IA garantizando compliance y seguridad en entornos corporativos."
+    },
+    "ollama": {
+      "narrative": "Ollama para ejecutar LLMs localmente durante desarrollo y prototipado. Permite experimentación rápida con modelos open-source como Llama 2, Mistral y CodeLlama sin dependencias cloud. Ideal para desarrollo offline, testing de prompts y reducción de costos en ambientes de desarrollo."
     },
     "huggingface": {
       "narrative": "Utilizando Hugging Face para acceder a modelos de ML pre-entrenados y fine-tuning de transformers. Plataforma esencial para experimentación con modelos open-source, embeddings de texto, y despliegue de modelos custom. Implementado en pipelines de NLP para clasificación, análisis de sentimientos y extracción de información."
@@ -122,20 +130,38 @@
     "typescript": {
       "narrative": "TypeScript como lenguaje principal para desarrollo frontend y backend, garantizando type safety y mejor developer experience. Utilizo tipos avanzados (generics, conditional types, mapped types), interfaces robustas y strict mode para prevenir bugs en tiempo de desarrollo. Implemento type guards, utility types y custom types para APIs type-safe."
     },
+    "javascript": {
+      "narrative": "JavaScript como lenguaje base del desarrollo web moderno. Dominio de ES6+, programación funcional, async/await y event-driven architecture. Fundamento para React, Node.js y todo el ecosistema frontend/backend. Experiencia con module bundlers, transpilers y el ecosistema de npm."
+    },
     "fastapi": {
       "narrative": "FastAPI para construir APIs de alto rendimiento con Python. Framework ideal para proyectos de ML/AI gracias a su excelente integración con el ecosistema Python. Implemento endpoints async para máxima concurrencia, validación automática con Pydantic, documentación auto-generada con OpenAPI, y dependency injection para código limpio y testeable."
     },
-    "nestjs": {
-      "narrative": "NestJS para arquitecturas backend escalables y mantenibles con TypeScript. Aprovecho su sistema de módulos, dependency injection y decorators para construir aplicaciones enterprise-grade. Implemento guards para autenticación, interceptors para logging, pipes para validación y filters para manejo de errores. Ideal para microservicios y APIs GraphQL."
+    "flask": {
+      "narrative": "Flask para APIs rápidas y prototipos web con Python. Micro-framework minimalista que ofrece flexibilidad total. Ideal para proyectos pequeños, APIs de ML, y servicios donde necesito control granular sin overhead de frameworks pesados. Extensible mediante blueprints y extensions."
     },
     "python": {
       "narrative": "Python como lenguaje principal para Machine Learning, Data Science y backend APIs. Experiencia profunda con el ecosistema científico (NumPy, Pandas, Scikit-learn) y frameworks de deep learning. Código limpio siguiendo PEP 8, type hints para mejor mantenibilidad, y async/await para operaciones concurrentes."
+    },
+    "django": {
+      "narrative": "Django para aplicaciones web full-stack con Python. Framework batteries-included que acelera desarrollo con ORM potente, admin panel integrado, sistema de autenticación y migraciones. Implemento APIs REST con Django REST Framework, websockets con Channels, y background tasks con Celery."
+    },
+    "springboot": {
+      "narrative": "Spring Boot para aplicaciones enterprise Java robustas y escalables. Framework maduro con dependency injection, seguridad avanzada y ecosistema extenso. Implemento microservicios, APIs RESTful, integración con bases de datos y mensajería. Ideal para sistemas de misión crítica en entornos corporativos."
+    },
+    "express": {
+      "narrative": "Express.js como framework minimalista para APIs Node.js. Middleware flexible, routing sencillo y gran ecosistema de plugins. Base para construir RESTful APIs, backends para SPAs y microservicios. Su simplicidad permite arquitecturas custom adaptadas a necesidades específicas."
+    },
+    "nestjs": {
+      "narrative": "NestJS para arquitecturas backend escalables y mantenibles con TypeScript. Aprovecho su sistema de módulos, dependency injection y decorators para construir aplicaciones enterprise-grade. Implemento guards para autenticación, interceptors para logging, pipes para validación y filters para manejo de errores. Ideal para microservicios y APIs GraphQL."
     },
     "nodejs": {
       "narrative": "Node.js como runtime para JavaScript backend, permitiendo full-stack development con un solo lenguaje. Experiencia con event loop, streams, y optimización de performance. Implemento arquitecturas escalables con clustering, manejo eficiente de I/O asíncrono, y aprovecho el rico ecosistema de npm."
     },
     "postgresql": {
       "narrative": "PostgreSQL como base de datos relacional principal para aplicaciones production. Expertise en diseño de schemas complejos, índices optimizados, queries avanzadas con CTEs y window functions. Implemento extensiones como PostGIS para datos geoespaciales en Rentstate, json/jsonb para datos semi-estructurados, y full-text search. Competente en tuning de performance y estrategias de backup."
+    },
+    "mongodb": {
+      "narrative": "MongoDB como base de datos NoSQL para datos flexibles y escalabilidad horizontal. Ideal para esquemas dinámicos, documentos JSON y prototipado rápido. Implemento agregaciones complejas, índices geoespaciales y búsquedas full-text. Uso en proyectos que requieren agilidad en evolución de schema y alto throughput de escritura."
     },
     "prisma": {
       "narrative": "Prisma como ORM moderno para TypeScript, ofreciendo type-safety completo desde la base de datos hasta la aplicación. Utilizo Prisma Client para queries type-safe, Prisma Migrate para control de versiones de schema, y Prisma Studio para administración visual. Implemento relaciones complejas, cascadas, y optimizaciones con select/include estratégicos."
@@ -155,11 +181,23 @@
     "gcp": {
       "narrative": "Google Cloud Platform para infraestructura production-grade. Experiencia con Cloud Run para containers serverless, Cloud SQL para databases administradas, Cloud Storage para assets estáticos, y Cloud Build para CI/CD. Implemento arquitecturas escalables con load balancing, auto-scaling y monitoreo con Cloud Logging y Monitoring."
     },
+    "azure": {
+      "narrative": "Microsoft Azure para soluciones cloud empresariales. Experiencia con Azure App Service, Azure Functions, Azure SQL Database y Azure DevOps. Integración con ecosistema Microsoft, Active Directory y servicios cognitivos. Implemento arquitecturas multi-región con alta disponibilidad y disaster recovery."
+    },
     "git": {
       "narrative": "Git como sistema de control de versiones para colaboración y gestión de código fuente. Dominio de workflows avanzados con feature branches, rebasing, cherry-picking y conflict resolution. Implemento conventional commits, pre-commit hooks con Husky y lint-staged, y estrategias de branching como Git Flow o trunk-based development."
     },
     "githubActions": {
       "narrative": "GitHub Actions para CI/CD automatizado y workflows personalizados. Creo pipelines que ejecutan tests, linting, build y deployment automático en cada push. Implemento matrix builds para testing cross-platform, caching de dependencies para velocidad, y secrets management seguro. Integración con Vercel, GCP y otros servicios cloud."
+    },
+    "jest": {
+      "narrative": "Jest para testing de JavaScript/TypeScript con experiencia de desarrollo excepcional. Framework completo con mocking automático, cobertura de código y ejecución paralela. Implemento tests unitarios, de integración y snapshots. Ideal para proyectos React, Node.js y aplicaciones full-stack con TypeScript."
+    },
+    "pytest": {
+      "narrative": "PyTest como framework de testing principal para Python. Sintaxis limpia, fixtures poderosas y plugins extensibles. Implemento tests unitarios, de integración y end-to-end para APIs FastAPI y Django. Parametrización de tests, markers para categorización y generación de reportes HTML detallados."
+    },
+    "cypress": {
+      "narrative": "Cypress para E2E testing de aplicaciones web con experiencia de debugging superior. Tests rápidos, confiables y fáciles de escribir. Implemento flujos completos de usuario, testing de API, intercepción de requests y visual regression. Time-travel debugging y screenshots automáticos en fallos."
     },
     "usage": {
       "bridge": "Bridge (Traducción LSP)",
@@ -179,8 +217,30 @@
       "backend": "Servicios backend",
       "nextjs": "Proyectos Next.js",
       "cicd": "CI/CD pipelines",
-      "frontend": "Frontend apps"
+      "frontend": "Frontend apps",
+      "enterprise": "Soluciones enterprise",
+      "localAI": "IA local",
+      "development": "Desarrollo",
+      "webApps": "Aplicaciones web",
+      "fullstack": "Full-stack",
+      "microservices": "Microservicios",
+      "flexible": "Esquemas flexibles",
+      "documents": "Datos documentales",
+      "cloud": "Cloud computing",
+      "unittests": "Tests unitarios",
+      "e2e": "Tests E2E",
+      "integration": "Tests integración",
+      "transformers": "Modelos Transformer",
+      "prototypes": "Prototipos"
     }
+  },
+  "techModal": {
+    "title": "Detalle de Tecnología",
+    "role": "Ingeniera AI & Software",
+    "usage": "Uso",
+    "usageExamples": "ejemplos seleccionados",
+    "codePreview": "Vista Previa de Código",
+    "syntaxHighlight": "resaltado de sintaxis"
   },
   "common": {
     "loading": "Cargando...",
