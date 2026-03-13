@@ -13,7 +13,7 @@ const Section = React.forwardRef<HTMLElement, SectionProps>(
         className={cn(
           'relative py-16 sm:py-20 lg:py-24',
           {
-            'bg-background': variant === 'default',
+            'bg-transparent': variant === 'default',
             'bg-surface': variant === 'dark',
             glass: variant === 'glass',
           },

@@ -1,13 +1,17 @@
 import { HeroSection } from '@/components/portfolio/HeroSection';
-import { ProjectsShowcase } from '@/components/portfolio/ProjectsShowcase';
 import { StackSection } from '@/components/portfolio/StackSection';
+import { AboutSection } from '@/components/portfolio/AboutSection';
+import { LandingBackground } from '@/components/effects/LandingBackground';
 
 export default function HomePage() {
   return (
     <div className="relative">
-      <HeroSection />
-      <ProjectsShowcase />
-      <StackSection />
+      <LandingBackground />
+      <div className="relative z-10">
+        <HeroSection />
+        <AboutSection />
+        <StackSection />
+      </div>
     </div>
   );
 }

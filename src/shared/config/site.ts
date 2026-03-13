@@ -14,7 +14,7 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   name: 'Nirvana Garcia',
-  title: 'Nirvana Garcia | AI & Software Engineer',
+  title: 'Nirvana Garcia — AI & Software Engineer',
   description:
     'Premium portfolio showcasing AI and software engineering projects, expertise in modern web technologies, and innovative solutions.',
   url: 'https://nirvanagarcia.com',

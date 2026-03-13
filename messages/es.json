@@ -1,6 +1,6 @@
 {
   "nav": {
-    "home": "Inicio",
+    "home": "Sobre Nirvana",
     "projects": "Proyectos",
     "stack": "Stack",
     "about": "Sobre mí",
@@ -241,6 +241,21 @@
     "usageExamples": "ejemplos seleccionados",
     "codePreview": "Vista Previa de Código",
     "syntaxHighlight": "resaltado de sintaxis"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "description": "Ingeniera de IA y Software apasionada por construir soluciones innovadoras que combinan inteligencia artificial de vanguardia con experiencias web excepcionales.",
+    "location": "Lima, Perú",
+    "availability": "Disponible para proyectos",
+    "availabilityStatus": "Disponible para proyectos",
+    "downloadCV": "Descargar CV",
+    "journeyTitle": "Trayectoria Profesional",
+    "story": "Historia",
+    "journeySubtitle": "Mi camino en el desarrollo de software y la inteligencia artificial",
+    "current": "Actual",
+    "present": "Presente",
+    "work": "Trabajo",
+    "education": "Educación"
   },
   "common": {
     "loading": "Cargando...",

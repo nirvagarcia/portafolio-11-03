@@ -6,9 +6,7 @@ import { useTranslations } from 'next-intl';
 import { ArrowDown } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { Badge } from '@/components/ui/Badge';
-import { HeroBackground } from '@/components/effects/HeroBackground';
 import { FloatingCode } from '@/components/effects/FloatingCode';
-import { ProfileImage } from './ProfileImage';
 
 export function HeroSection() {
   const t = useTranslations('hero');
@@ -16,15 +14,14 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-transparent pb-0"
     >
-      <HeroBackground />
       <FloatingCode />
 
       <Container className="relative z-10">
-        <div className="flex flex-col items-center gap-12 py-20 lg:flex-row lg:gap-20 lg:py-0">
+        <div className="flex flex-col items-center justify-center py-20 lg:py-0">
           <motion.div
-            className="flex-1 space-y-8 text-center lg:text-left"
+            className="flex-1 space-y-8 text-center"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -40,22 +37,13 @@ export function HeroSection() {
             </motion.div>
 
             <motion.h1
-              className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl"
+              className="text-5xl font-bold leading-tight sm:text-6xl lg:text-7xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <span className="text-gradient-primary">{t('headline')}</span>
             </motion.h1>
-          </motion.div>
-
-          <motion.div
-            className="flex-shrink-0"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-          >
-            <ProfileImage />
           </motion.div>
         </div>
       </Container>
@@ -86,8 +74,6 @@ export function HeroSection() {
           <div className="h-8 w-[2px] bg-gradient-to-b from-glow-primary/50 via-glow-secondary/30 to-transparent" />
         </motion.button>
       </motion.div>
-
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-32 bg-gradient-to-b from-transparent via-background/40 to-background" />
     </section>
   );
 }

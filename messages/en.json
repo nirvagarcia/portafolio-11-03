@@ -1,6 +1,6 @@
 {
   "nav": {
-    "home": "Home",
+    "home": "About Nirvana",
     "projects": "Projects",
     "stack": "Stack",
     "about": "About me",
@@ -241,6 +241,21 @@
     "usageExamples": "selected examples",
     "codePreview": "Code Preview",
     "syntaxHighlight": "syntax highlight"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "AI & Software Engineer passionate about building innovative solutions that blend cutting-edge artificial intelligence with exceptional web experiences.",
+    "location": "Lima, Peru",
+    "availability": "Open to opportunities",
+    "availabilityStatus": "Available for projects",
+    "downloadCV": "Download CV",
+    "journeyTitle": "Career Journey",
+    "story": "Story",
+    "journeySubtitle": "My path in software development and artificial intelligence",
+    "current": "Current",
+    "present": "Present",
+    "work": "Work",
+    "education": "Education"
   },
   "common": {
     "loading": "Loading...",
