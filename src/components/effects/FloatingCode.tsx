@@ -49,15 +49,15 @@ function FloatingCodeItem({ text, delay, x, y, duration, category }: FloatingCod
   const colorClass = React.useMemo(() => {
     switch (category) {
       case 'ml':
-        return 'text-[#C586C0]';
+        return 'text-gray-500 dark:text-gray-400';
       case 'backend':
-        return 'text-[#4EC9B0]';
+        return 'text-gray-600 dark:text-gray-300';
       case 'frontend':
-        return 'text-[#DCDCAA]';
+        return 'text-gray-400 dark:text-gray-500';
       case 'devops':
-        return 'text-[#9CDCFE]';
+        return 'text-gray-500 dark:text-gray-400';
       default:
-        return 'text-[#CE9178]';
+        return 'text-gray-600 dark:text-gray-300';
     }
   }, [category]);
 

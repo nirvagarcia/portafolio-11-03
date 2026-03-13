@@ -14,7 +14,11 @@
     "readme": "README.md",
     "headline": "Building intelligent solutions for tomorrow's challenges",
     "subheadline": "Crafting premium software experiences with cutting-edge AI and modern web technologies",
-    "cta": "Explore Portfolio"
+    "cta": "Explore Portfolio",
+    "status": {
+      "available": "Available for work"
+    },
+    "location": "Based in Lima, Peru"
   },
   "theme": {
     "toggle": "Toggle theme",

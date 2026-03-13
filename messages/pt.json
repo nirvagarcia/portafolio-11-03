@@ -14,7 +14,11 @@
     "readme": "README.md",
     "headline": "Construindo soluções inteligentes para os desafios de amanhã",
     "subheadline": "Criando experiências de software premium com IA de ponta e tecnologias web modernas",
-    "cta": "Explorar Portfólio"
+    "cta": "Explorar Portfólio",
+    "status": {
+      "available": "Disponível para trabalhar"
+    },
+    "location": "Baseada em Lima, Peru"
   },
   "theme": {
     "toggle": "Alternar tema",

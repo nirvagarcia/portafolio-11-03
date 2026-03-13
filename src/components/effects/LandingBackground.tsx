@@ -9,7 +9,7 @@ export function LandingBackground() {
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background" />
 
       <motion.div
-        className="absolute left-[10%] top-[8%] h-[500px] w-[500px] rounded-full bg-glow-primary/30 blur-[120px]"
+        className="absolute left-[10%] top-[8%] h-[500px] w-[500px] rounded-full bg-glow-primary/5 blur-[120px] dark:bg-glow-primary/35 sm:bg-glow-primary/0"
         animate={{
           x: [0, 50, 0],
           y: [0, 30, 0],
@@ -23,7 +23,7 @@ export function LandingBackground() {
       />
 
       <motion.div
-        className="absolute right-[15%] top-[15%] h-[600px] w-[600px] rounded-full bg-glow-secondary/25 blur-[130px]"
+        className="bg-glow-secondary/4 dark:bg-glow-secondary/28 absolute right-[15%] top-[15%] h-[600px] w-[600px] rounded-full blur-[130px] sm:bg-glow-secondary/0"
         animate={{
           x: [0, -40, 0],
           y: [0, 50, 0],
@@ -38,7 +38,7 @@ export function LandingBackground() {
       />
 
       <motion.div
-        className="bg-glow-secondary/22 absolute left-[5%] top-[40%] h-[480px] w-[480px] rounded-full blur-[115px]"
+        className="bg-glow-secondary/4 absolute left-[5%] top-[40%] h-[480px] w-[480px] rounded-full blur-[115px] dark:bg-glow-secondary/25 sm:bg-glow-secondary/0"
         animate={{
           x: [0, 45, 0],
           y: [0, -35, 0],
@@ -53,7 +53,7 @@ export function LandingBackground() {
       />
 
       <motion.div
-        className="bg-glow-primary/24 absolute right-[10%] top-[45%] h-[520px] w-[520px] rounded-full blur-[125px]"
+        className="dark:bg-glow-primary/27 absolute right-[10%] top-[45%] h-[520px] w-[520px] rounded-full bg-glow-primary/5 blur-[125px] sm:bg-glow-primary/0"
         animate={{
           x: [0, -38, 0],
           y: [0, 42, 0],
@@ -68,7 +68,7 @@ export function LandingBackground() {
       />
 
       <motion.div
-        className="absolute left-[60%] top-[65%] h-[450px] w-[450px] rounded-full bg-glow-primary/20 blur-[110px]"
+        className="bg-glow-primary/4 absolute left-[60%] top-[65%] h-[450px] w-[450px] rounded-full blur-[110px] dark:bg-glow-primary/20 sm:bg-glow-primary/0"
         animate={{
           x: [0, -35, 0],
           y: [0, -25, 0],
@@ -83,7 +83,7 @@ export function LandingBackground() {
       />
 
       <motion.div
-        className="bg-glow-secondary/18 absolute left-[20%] top-[72%] h-[430px] w-[430px] rounded-full blur-[105px]"
+        className="bg-glow-secondary/3 dark:bg-glow-secondary/18 absolute left-[20%] top-[72%] h-[430px] w-[430px] rounded-full blur-[105px] sm:bg-glow-secondary/0"
         animate={{
           x: [0, 40, 0],
           y: [0, -30, 0],
@@ -98,7 +98,7 @@ export function LandingBackground() {
       />
 
       <motion.div
-        className="bg-glow-primary/16 absolute right-[25%] top-[88%] h-[380px] w-[380px] rounded-full blur-[95px]"
+        className="bg-glow-primary/3 dark:bg-glow-primary/16 absolute right-[25%] top-[88%] h-[380px] w-[380px] rounded-full blur-[95px] sm:bg-glow-primary/0"
         animate={{
           x: [0, -30, 0],
           y: [0, 20, 0],
@@ -113,7 +113,7 @@ export function LandingBackground() {
       />
 
       <motion.div
-        className="bg-glow-secondary/17 absolute left-[45%] top-[82%] h-[400px] w-[400px] rounded-full blur-[100px]"
+        className="bg-glow-secondary/3 dark:bg-glow-secondary/17 absolute left-[45%] top-[82%] h-[400px] w-[400px] rounded-full blur-[100px] sm:bg-glow-secondary/0"
         animate={{
           x: [0, 32, 0],
           y: [0, -22, 0],
@@ -136,7 +136,7 @@ export function LandingBackground() {
         }}
       />
 
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-background/20 to-background/40" />
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-background/30 to-background/60 dark:via-background/90 dark:to-background/80 sm:via-background/20 sm:to-background/40 sm:dark:via-background/40 sm:dark:to-background/70" />
     </div>
   );
 }

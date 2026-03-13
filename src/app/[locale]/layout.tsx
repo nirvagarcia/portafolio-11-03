@@ -4,7 +4,7 @@ import { getMessages } from 'next-intl/server';
 import { locales, type Locale } from '@/shared/config/locales';
 import { ThemeProvider } from '@/components/layout/ThemeProvider';
 import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
+import { ConditionalFooter } from '@/components/layout/ConditionalFooter';
 import { RouteChangeIndicator } from '@/components/layout/RouteChangeIndicator';
 import { CustomCursor } from '@/components/effects/CustomCursor';
 
@@ -35,7 +35,7 @@ export default async function LocaleLayout({
         <div className="relative flex min-h-screen flex-col">
           <Header locale={locale} />
           <main className="flex-1">{children}</main>
-          <Footer />
+          <ConditionalFooter />
         </div>
       </ThemeProvider>
     </NextIntlClientProvider>
