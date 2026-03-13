@@ -1,15 +1,12 @@
 'use client';
 
 import * as React from 'react';
-import Link from 'next/link';
-import { useTranslations } from 'next-intl';
-import { Home, Menu, X } from 'lucide-react';
-import { Navbar } from './Navbar';
+import { useRouter, usePathname } from 'next/navigation';
+import Image from 'next/image';
 import { ThemeToggle } from './ThemeToggle';
 import { LanguageSwitcher } from './LanguageSwitcher';
-import { Button } from '@/components/ui/Button';
+import { Navbar } from './Navbar';
 import { Container } from '@/components/ui/Container';
-import { navItems } from '@/shared/data/navigation';
 import { cn } from '@/shared/lib/utils';
 
 interface HeaderProps {
@@ -17,9 +14,9 @@ interface HeaderProps {
 }
 
 export function Header({ locale }: HeaderProps) {
-  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
-  const t = useTranslations('nav');
+  const router = useRouter();
+  const pathname = usePathname();
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -30,68 +27,58 @@ export function Header({ locale }: HeaderProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleLogoClick = () => {
+    const currentPath = pathname.replace(`/${locale}`, '') || '/';
+
+    if (currentPath === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      router.push(`/${locale}`);
+    }
+  };
+
   return (
     <header
       className={cn(
         'fixed left-0 right-0 top-0 z-50 transition-all duration-300',
-        isScrolled ? 'py-3' : 'py-6'
+        isScrolled ? 'py-2' : 'py-6'
       )}
     >
       <Container>
-        <div className="flex items-center justify-between transition-all duration-300">
-          <Link
-            href={`/${locale}`}
+        <div className="flex items-center justify-between gap-2 transition-all duration-300">
+          <button
+            onClick={handleLogoClick}
             className={cn(
-              'flex items-center gap-2 text-foreground transition-all hover:text-glow-primary',
-              isScrolled && 'glass-card rounded-full px-4 py-3'
+              'group flex items-center gap-2 text-foreground transition-all sm:gap-3',
+              isScrolled && 'glass-card rounded-full px-2 py-1.5 sm:px-3 sm:py-2'
             )}
-            aria-label="Home"
+            aria-label="Go to home"
           >
-            <Home className="h-5 w-5" />
-          </Link>
+            <Image
+              src="/images/headphones.png"
+              alt="Logo"
+              width={24}
+              height={24}
+              className="transition-transform duration-300 ease-out group-hover:rotate-12 sm:h-7 sm:w-7"
+            />
+            <span className="hidden font-mono text-sm text-muted-foreground sm:inline">
+              @nirvagarcia
+            </span>
+          </button>
 
           <Navbar locale={locale} />
 
           <div
             className={cn(
-              'flex items-center gap-2 transition-all',
-              isScrolled && 'glass-card rounded-full px-4 py-3'
+              'flex items-center gap-1 transition-all',
+              isScrolled && 'glass-card rounded-full px-2 py-1 sm:px-3 sm:py-1.5'
             )}
           >
             <ThemeToggle />
             <LanguageSwitcher currentLocale={locale} />
-
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
           </div>
         </div>
       </Container>
-
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 top-20 animate-fade-in bg-background/95 backdrop-blur-lg md:hidden">
-          <Container>
-            <nav className="flex flex-col gap-2 py-6">
-              {navItems.map((item) => (
-                <Link
-                  key={item.key}
-                  href={`/${locale}${item.href}`}
-                  className="rounded-lg px-6 py-4 text-base font-medium transition-colors hover:bg-surface-elevated"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {t(item.key)}
-                </Link>
-              ))}
-            </nav>
-          </Container>
-        </div>
-      )}
     </header>
   );
 }

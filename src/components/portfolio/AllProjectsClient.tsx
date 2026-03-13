@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslations } from 'next-intl';
-import { Search, X } from 'lucide-react';
+import { Search, X, ChevronDown, Filter } from 'lucide-react';
 import { BentoProjectCard } from '@/components/portfolio/BentoProjectCard';
 import { projects } from '@/shared/data/projects';
 import { Section } from '@/components/ui/Section';
@@ -12,8 +12,10 @@ import { Button } from '@/components/ui/Button';
 
 export function AllProjectsClient() {
   const t = useTranslations('projects');
+  const tGeneral = useTranslations();
   const [searchQuery, setSearchQuery] = React.useState('');
   const [selectedTechs, setSelectedTechs] = React.useState<string[]>([]);
+  const [showTechFilter, setShowTechFilter] = React.useState(false);
 
   const allTechs = React.useMemo(() => {
     const techs = new Set<string>();
@@ -28,14 +30,14 @@ export function AllProjectsClient() {
       const matchesSearch =
         searchQuery === '' ||
         project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        t(project.description).toLowerCase().includes(searchQuery.toLowerCase());
+        tGeneral(project.description).toLowerCase().includes(searchQuery.toLowerCase());
 
       const matchesTech =
         selectedTechs.length === 0 || selectedTechs.every((tech) => project.tags.includes(tech));
 
       return matchesSearch && matchesTech;
     });
-  }, [searchQuery, selectedTechs, t]);
+  }, [searchQuery, selectedTechs, tGeneral]);
 
   const toggleTech = (tech: string) => {
     setSelectedTechs((prev) =>
@@ -53,60 +55,109 @@ export function AllProjectsClient() {
   return (
     <div className="min-h-screen pt-24">
       <Section className="py-12 lg:py-20">
-        <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-12">
+        <div className="mx-auto w-full max-w-[1600px] px-6 sm:px-8 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-12 space-y-6"
+            className="mb-12"
           >
-            <h1 className="text-4xl font-light lg:text-5xl">
-              {t('allProjects')}{' '}
-              <span className="text-lg font-extralight text-muted-foreground/60 lg:text-xl">
-                ({filteredProjects.length})
-              </span>
-            </h1>
-
-            <div className="relative max-w-xl">
-              <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
-              <input
-                type="text"
-                placeholder={t('filterByName')}
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full rounded-full border border-border bg-surface px-12 py-3 text-foreground placeholder:text-muted-foreground focus:border-glow-primary focus:outline-none focus:ring-2 focus:ring-glow-primary/20"
-              />
-              {searchQuery && (
-                <button
-                  onClick={() => setSearchQuery('')}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  <X className="h-5 w-5" />
-                </button>
+            <div className="mb-8 flex items-end justify-between">
+              <div>
+                <h1 className="text-4xl font-light lg:text-5xl">{t('allProjects')}</h1>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {filteredProjects.length}{' '}
+                  {filteredProjects.length === 1 ? 'proyecto' : 'proyectos'}
+                </p>
+              </div>
+              {hasActiveFilters && (
+                <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}>
+                  <Button variant="outline" size="sm" onClick={clearFilters} className="gap-2">
+                    <X className="h-3.5 w-3.5" />
+                    {t('clearFilters')}
+                  </Button>
+                </motion.div>
               )}
             </div>
 
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <p className="text-sm font-medium text-muted-foreground">{t('filterByTech')}:</p>
-                {hasActiveFilters && (
-                  <Button variant="ghost" size="sm" onClick={clearFilters} className="text-xs">
-                    {t('clearFilters')}
-                  </Button>
+            <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="relative max-w-lg flex-1">
+                <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/60" />
+                <input
+                  type="text"
+                  placeholder={t('filterByName')}
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="h-10 w-full rounded-full border border-border/50 bg-surface/50 px-11 text-sm text-foreground backdrop-blur-sm transition-all placeholder:text-muted-foreground/60 focus:border-glow-primary focus:bg-surface focus:outline-none focus:ring-2 focus:ring-glow-primary/10"
+                />
+                {searchQuery && (
+                  <motion.button
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    onClick={() => setSearchQuery('')}
+                    className="absolute right-3 top-1/2 flex h-5 w-5 -translate-y-1/2 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                  >
+                    <X className="h-3.5 w-3.5" />
+                  </motion.button>
                 )}
               </div>
-              <div className="flex flex-wrap gap-2">
-                {allTechs.map((tech) => (
-                  <Badge
-                    key={tech}
-                    variant={selectedTechs.includes(tech) ? 'glow' : 'secondary'}
-                    className="cursor-pointer transition-all hover:scale-105"
-                    onClick={() => toggleTech(tech)}
-                  >
-                    {tech}
-                  </Badge>
-                ))}
-              </div>
+
+              <button
+                onClick={() => setShowTechFilter(!showTechFilter)}
+                className="flex items-center gap-2 rounded-full border border-border/50 bg-surface/50 px-4 py-2.5 text-sm backdrop-blur-sm transition-all hover:border-glow-primary hover:bg-surface"
+              >
+                <Filter className="h-4 w-4 text-muted-foreground" />
+                <span className="font-medium">{t('filterByTech')}</span>
+                {selectedTechs.length > 0 && (
+                  <span className="rounded-full bg-glow-primary/10 px-2 py-0.5 text-xs font-medium text-glow-primary">
+                    {selectedTechs.length}
+                  </span>
+                )}
+                <motion.div
+                  animate={{ rotate: showTechFilter ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ChevronDown className="h-3.5 w-3.5 text-muted-foreground" />
+                </motion.div>
+              </button>
             </div>
+
+            <AnimatePresence>
+              {showTechFilter && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="mb-6 overflow-hidden"
+                >
+                  <div className="rounded-xl border border-border/50 bg-surface/30 p-4 backdrop-blur-sm">
+                    <motion.div layout className="flex flex-wrap gap-2">
+                      <AnimatePresence mode="popLayout">
+                        {allTechs.map((tech) => (
+                          <motion.div
+                            key={tech}
+                            layout
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.8 }}
+                            transition={{ duration: 0.2 }}
+                          >
+                            <Badge
+                              variant={selectedTechs.includes(tech) ? 'glow' : 'secondary'}
+                              className="cursor-pointer transition-all hover:scale-105 hover:shadow-md"
+                              onClick={() => toggleTech(tech)}
+                            >
+                              {tech}
+                            </Badge>
+                          </motion.div>
+                        ))}
+                      </AnimatePresence>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
 
           <AnimatePresence mode="wait">

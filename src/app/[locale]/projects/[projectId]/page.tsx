@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { notFound } from 'next/navigation';
-import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
 import { Badge } from '@/components/ui/Badge';
+import { BackButton } from '@/components/ui/BackButton';
 import { projects } from '@/shared/data/projects';
-import type { Locale } from '@/shared/config/locales';
 
 interface ProjectPageProps {
   params: Promise<{
@@ -38,8 +37,9 @@ export async function generateMetadata({ params }: ProjectPageProps) {
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
-  const { projectId, locale } = await params;
+  const { projectId } = await params;
   const t = await getTranslations('projects');
+  const tGeneral = await getTranslations();
 
   const project = projects.find((p) => p.id === projectId);
 
@@ -49,6 +49,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <div className="min-h-screen pt-24">
+      <BackButton />
       <Section className="py-20">
         <Container>
           <div className="mb-12 text-center">
@@ -56,7 +57,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               {t('history')}
             </Badge>
             <h1 className="mb-4 text-4xl font-bold lg:text-5xl">{project.title}</h1>
-            <p className="text-lg text-muted-foreground">{t(project.description)}</p>
+            <p className="text-lg text-muted-foreground">{tGeneral(project.description)}</p>
           </div>
 
           <div className="mx-auto max-w-3xl">

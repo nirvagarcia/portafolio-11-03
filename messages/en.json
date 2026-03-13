@@ -9,6 +9,9 @@
   "hero": {
     "name": "Nirvana Garcia",
     "role": "AI & Software Engineer",
+    "developer": "AI & Software Developer",
+    "projects": "Projects",
+    "readme": "README.md",
     "headline": "Building intelligent solutions for tomorrow's challenges",
     "subheadline": "Crafting premium software experiences with cutting-edge AI and modern web technologies",
     "cta": "Explore Portfolio"
@@ -24,6 +27,18 @@
   "contact": {
     "title": "Get in Touch",
     "subtitle": "Let's work together on your next project",
+    "connect": "Let's Connect",
+    "email": "Email",
+    "location": "Location",
+    "locationValue": "Lima, Peru",
+    "responseTime": "Response Time",
+    "responseValue": "Usually within 24 hours",
+    "followMe": "Follow Me",
+    "funFact": "Fun fact:",
+    "funFactText": "I respond faster to messages with coffee emojis",
+    "sendMessage": "Send me a message",
+    "sendMessageDesc": "Fill out the form below and I'll get back to you as soon as possible.",
+    "preferEmail": "Prefer email? Reach me directly at",
     "form": {
       "name": "Name",
       "namePlaceholder": "Your name",
@@ -60,10 +75,12 @@
     "viewAll": "View all projects",
     "filterByName": "Filter by name",
     "filterByTech": "Filter by technology",
-    "allProjects": "All Projects",
+    "allProjects": "My Projects",
     "noResults": "No projects found",
     "tryAdjusting": "Try adjusting your filters or search query",
     "clearFilters": "Clear filters",
+    "showMore": "Show more",
+    "showLess": "Show less",
     "previous": "Previous page",
     "next": "Next page"
   },
@@ -99,12 +116,12 @@
     "subtitle": "Nirvana's tech stack organized in architectural layers. Click on any technology to explore my real use cases and code examples.",
     "cta": "Explore my tech stack.",
     "layers": {
-      "ai": "AI & Agents Layer",
-      "frontend": "Frontend Layer",
-      "backend": "Backend Layer",
-      "data": "Data Layer",
-      "infrastructure": "Infrastructure & DevOps Layer",
-      "testing": "Testing & Quality Assurance"
+      "ai": "AI & Agents",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "data": "Data",
+      "infrastructure": "Infrastructure & DevOps",
+      "testing": "Testing & QA"
     },
     "openai": {
       "narrative": "Integrating OpenAI API for state-of-the-art generative AI capabilities. Implemented in multiple projects like Bridge for LSP-to-text translation and conversational chat systems. I use GPT-4 Turbo for complex natural language understanding and generation tasks, leveraging function calling and streaming capabilities."
@@ -244,7 +261,11 @@
   },
   "about": {
     "title": "About Me",
+    "subtitle": "Get to know me better",
+    "role": "AI & Software Engineer",
     "description": "AI & Software Engineer passionate about building innovative solutions that blend cutting-edge artificial intelligence with exceptional web experiences.",
+    "aboutMe": "About Me",
+    "experience": "Experience & Education",
     "location": "Lima, Peru",
     "availability": "Open to opportunities",
     "availabilityStatus": "Available for projects",
@@ -259,6 +280,7 @@
   },
   "common": {
     "loading": "Loading...",
-    "error": "Something went wrong"
+    "error": "Something went wrong",
+    "back": "Back"
   }
 }

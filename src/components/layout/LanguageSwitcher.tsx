@@ -40,6 +40,7 @@ export function LanguageSwitcher({ currentLocale }: { currentLocale: string }) {
         aria-label={t('select')}
         aria-expanded={isOpen}
         disabled={isChanging}
+        className="hover:bg-transparent"
       >
         {isChanging ? (
           <Loader2 className="h-5 w-5 animate-spin text-glow-primary" />

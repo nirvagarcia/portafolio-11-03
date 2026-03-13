@@ -22,7 +22,7 @@ export const siteConfig: SiteConfig = {
     name: 'Nirvana Garcia',
     title: 'AI & Software Engineer',
     email: 'hello@nirvanagarcia.com',
-    github: 'https://github.com/nirvanagarcia',
-    linkedin: 'https://linkedin.com/in/nirvanagarcia',
+    github: 'https://github.com/nirvagarcia',
+    linkedin: 'https://www.linkedin.com/in/nirvana-garcia/',
   },
 };

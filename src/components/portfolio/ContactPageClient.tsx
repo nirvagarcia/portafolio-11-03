@@ -4,32 +4,32 @@ import * as React from 'react';
 import { motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import { ContactForm } from './ContactForm';
-import { Mail, Github, Linkedin, Twitter, MapPin, Clock, Send } from 'lucide-react';
+import { Mail, Github, Linkedin, Twitter, MapPin, Clock } from 'lucide-react';
 
 const socialLinks = [
   {
     name: 'LinkedIn',
     icon: Linkedin,
-    href: 'https://linkedin.com',
-    color: 'from-blue-600 to-blue-400',
+    href: 'https://www.linkedin.com/in/nirvana-garcia/',
+    color: 'from-gray-600 to-gray-400',
   },
   {
     name: 'GitHub',
     icon: Github,
-    href: 'https://github.com',
+    href: 'https://github.com/nirvagarcia',
     color: 'from-gray-700 to-gray-500',
   },
   {
     name: 'Twitter',
     icon: Twitter,
     href: 'https://twitter.com',
-    color: 'from-sky-500 to-sky-400',
+    color: 'from-gray-500 to-gray-400',
   },
   {
     name: 'Email',
     icon: Mail,
     href: 'mailto:nirvagarciav@gmail.com',
-    color: 'from-purple-600 to-purple-400',
+    color: 'from-gray-600 to-gray-400',
   },
 ];
 
@@ -37,35 +37,7 @@ export function ContactPageClient() {
   const t = useTranslations('contact');
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-background via-background to-muted/20">
-      <div className="pointer-events-none fixed inset-0">
-        <motion.div
-          className="absolute left-[10%] top-[20%] h-96 w-96 rounded-full bg-primary/20 blur-[100px]"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
-        <motion.div
-          className="absolute bottom-[10%] right-[15%] h-96 w-96 rounded-full bg-purple-500/20 blur-[100px]"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: 'easeInOut',
-            delay: 1,
-          }}
-        />
-      </div>
-
+    <div className="relative min-h-screen overflow-hidden bg-transparent">
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -73,18 +45,6 @@ export function ContactPageClient() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
-            className="mb-6 inline-flex items-center justify-center"
-          >
-            <div className="relative">
-              <div className="absolute inset-0 animate-ping rounded-full bg-primary/20" />
-              <Send className="relative h-16 w-16 text-primary" />
-            </div>
-          </motion.div>
-
           <h1 className="mb-4 text-5xl font-bold lg:text-6xl">{t('title')}</h1>
           <p className="mx-auto max-w-2xl text-xl text-muted-foreground">{t('subtitle')}</p>
         </motion.div>
@@ -102,7 +62,7 @@ export function ContactPageClient() {
 
                 <div className="relative space-y-6">
                   <div>
-                    <h2 className="mb-6 text-2xl font-bold">Let's Connect</h2>
+                    <h2 className="mb-6 text-2xl font-bold">{t('connect')}</h2>
 
                     <div className="space-y-4">
                       <motion.div whileHover={{ x: 5 }} className="flex items-start gap-4">
@@ -110,7 +70,7 @@ export function ContactPageClient() {
                           <Mail className="h-5 w-5 text-primary" />
                         </div>
                         <div>
-                          <p className="font-medium">Email</p>
+                          <p className="font-medium">{t('email')}</p>
                           <p className="text-sm text-muted-foreground">nirvagarciav@gmail.com</p>
                         </div>
                       </motion.div>
@@ -120,8 +80,8 @@ export function ContactPageClient() {
                           <MapPin className="h-5 w-5 text-primary" />
                         </div>
                         <div>
-                          <p className="font-medium">Location</p>
-                          <p className="text-sm text-muted-foreground">Lima, Peru</p>
+                          <p className="font-medium">{t('location')}</p>
+                          <p className="text-sm text-muted-foreground">{t('locationValue')}</p>
                         </div>
                       </motion.div>
 
@@ -130,8 +90,8 @@ export function ContactPageClient() {
                           <Clock className="h-5 w-5 text-primary" />
                         </div>
                         <div>
-                          <p className="font-medium">Response Time</p>
-                          <p className="text-sm text-muted-foreground">Usually within 24 hours</p>
+                          <p className="font-medium">{t('responseTime')}</p>
+                          <p className="text-sm text-muted-foreground">{t('responseValue')}</p>
                         </div>
                       </motion.div>
                     </div>
@@ -140,7 +100,7 @@ export function ContactPageClient() {
               </div>
 
               <div className="bg-card/50 rounded-3xl border border-border/50 p-8 backdrop-blur-sm">
-                <h3 className="mb-6 text-lg font-semibold">Follow Me</h3>
+                <h3 className="mb-6 text-lg font-semibold">{t('followMe')}</h3>
                 <div className="grid grid-cols-2 gap-4">
                   {socialLinks.map((social, index) => (
                     <motion.a
@@ -171,11 +131,10 @@ export function ContactPageClient() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8 }}
-                className="rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/5 to-purple-500/5 p-6 text-center"
+                className="rounded-3xl border border-border/50 bg-surface/30 p-6 text-center"
               >
                 <p className="text-sm text-muted-foreground">
-                  💡 <span className="font-medium">Fun fact:</span> I respond faster to messages
-                  with coffee emojis
+                  💡 <span className="font-medium">{t('funFact')}</span> {t('funFactText')}
                 </p>
               </motion.div>
             </div>
@@ -193,10 +152,8 @@ export function ContactPageClient() {
 
               <div className="relative">
                 <div className="mb-8">
-                  <h2 className="mb-3 text-3xl font-bold">Send me a message</h2>
-                  <p className="text-muted-foreground">
-                    Fill out the form below and I'll get back to you as soon as possible.
-                  </p>
+                  <h2 className="mb-3 text-3xl font-bold">{t('sendMessage')}</h2>
+                  <p className="text-muted-foreground">{t('sendMessageDesc')}</p>
                 </div>
 
                 <ContactForm />
@@ -212,7 +169,7 @@ export function ContactPageClient() {
           className="mt-16 text-center"
         >
           <p className="text-lg text-muted-foreground">
-            Prefer email? Reach me directly at{' '}
+            {t('preferEmail')}{' '}
             <a
               href="mailto:nirvagarciav@gmail.com"
               className="font-semibold text-primary underline-offset-4 hover:underline"

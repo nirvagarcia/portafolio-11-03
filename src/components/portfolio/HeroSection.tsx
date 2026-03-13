@@ -1,78 +1,118 @@
 'use client';
 
 import * as React from 'react';
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
 import { motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
-import { ArrowDown } from 'lucide-react';
+import { Github, Linkedin, Instagram, ArrowRight } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
-import { Badge } from '@/components/ui/Badge';
 import { FloatingCode } from '@/components/effects/FloatingCode';
 
 export function HeroSection() {
   const t = useTranslations('hero');
+  const params = useParams();
+  const locale = params.locale as string;
+
+  const socialLinks = [
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/nirvana-garcia/', label: 'LinkedIn' },
+    { icon: Github, href: 'https://github.com/nirvagarcia', label: 'GitHub' },
+    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
+  ];
 
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-transparent pb-0"
+      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-transparent pb-0"
     >
       <FloatingCode />
 
-      <Container className="relative z-10">
-        <div className="flex flex-col items-center justify-center py-20 lg:py-0">
+      <Container className="relative z-10 flex flex-1 items-center">
+        <div className="flex w-full flex-col items-center justify-center pt-12">
           <motion.div
-            className="flex-1 space-y-8 text-center"
+            className="flex-1 space-y-4 text-center"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+            <motion.p
+              className="text-xl font-light text-muted-foreground sm:text-2xl lg:text-3xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <Badge variant="glow" className="px-4 py-2 text-sm">
-                {t('name')} | {t('role')}
-              </Badge>
-            </motion.div>
+              {t('developer')}
+            </motion.p>
 
             <motion.h1
-              className="text-5xl font-bold leading-tight sm:text-6xl lg:text-7xl"
+              className="text-6xl font-bold uppercase leading-tight tracking-tight sm:text-7xl lg:text-8xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <span className="text-gradient-primary">{t('headline')}</span>
+              {t('name')}
             </motion.h1>
+
+            <motion.div
+              className="flex flex-col items-center gap-3 pt-8 sm:flex-row sm:justify-center sm:gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <Link
+                href={`/${locale}/projects`}
+                className="group flex items-center gap-2 rounded-lg border border-border/50 bg-surface/50 px-6 py-3 font-mono text-sm backdrop-blur-sm transition-all hover:border-glow-primary hover:bg-surface"
+              >
+                <span className="text-muted-foreground">$</span>
+                <span>./{t('projects')}</span>
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+
+              <Link
+                href={`/${locale}/about`}
+                className="group flex items-center gap-2 rounded-lg border border-border/50 bg-surface/50 px-6 py-3 font-mono text-sm backdrop-blur-sm transition-all hover:border-glow-primary hover:bg-surface"
+              >
+                <span className="text-muted-foreground">$</span>
+                <span>cat ABOUTME.md</span>
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+
+              <Link
+                href={`/${locale}/contact`}
+                className="group flex items-center gap-2 rounded-lg border border-border/50 bg-surface/50 px-6 py-3 font-mono text-sm backdrop-blur-sm transition-all hover:border-glow-primary hover:bg-surface"
+              >
+                <span className="text-muted-foreground">$</span>
+                <span>vim CONTACT.md</span>
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </Container>
 
       <motion.div
-        className="absolute bottom-4 left-1/2 z-20 -translate-x-1/2 sm:bottom-6"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
+        className="relative z-20 mb-8 flex items-center justify-center gap-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
       >
-        <motion.button
-          onClick={() => {
-            document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
-          }}
-          className="group relative flex cursor-pointer flex-col items-center gap-2"
-          animate={{ y: [0, 12, 0] }}
-          transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
-        >
-          <div className="absolute inset-0 -m-4 rounded-full bg-gradient-to-br from-glow-primary/20 to-glow-secondary/20 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
-
-          <div className="relative">
-            <ArrowDown
-              className="h-7 w-7 text-glow-primary transition-colors duration-300 group-hover:text-glow-secondary sm:h-8 sm:w-8"
-              strokeWidth={2.5}
-            />
-          </div>
-
-          <div className="h-8 w-[2px] bg-gradient-to-b from-glow-primary/50 via-glow-secondary/30 to-transparent" />
-        </motion.button>
+        {socialLinks.map((social, index) => (
+          <motion.a
+            key={social.label}
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex h-12 w-12 items-center justify-center rounded-full border border-border/50 bg-surface/30 backdrop-blur-sm transition-all hover:border-glow-primary hover:bg-surface"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, delay: 1 + index * 0.1 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            aria-label={social.label}
+          >
+            <social.icon className="h-5 w-5 transition-colors group-hover:text-glow-primary" />
+          </motion.a>
+        ))}
       </motion.div>
     </section>
   );

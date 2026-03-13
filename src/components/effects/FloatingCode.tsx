@@ -46,18 +46,18 @@ interface FloatingCodeItemProps {
 }
 
 function FloatingCodeItem({ text, delay, x, y, duration, category }: FloatingCodeItemProps) {
-  const gradientClass = React.useMemo(() => {
+  const colorClass = React.useMemo(() => {
     switch (category) {
       case 'ml':
-        return 'from-glow-secondary/50 to-glow-primary/50';
+        return 'text-[#C586C0]';
       case 'backend':
-        return 'from-glow-primary/50 to-glow-secondary/40';
+        return 'text-[#4EC9B0]';
       case 'frontend':
-        return 'from-glow-primary/40 to-glow-secondary/50';
+        return 'text-[#DCDCAA]';
       case 'devops':
-        return 'from-muted-foreground/40 to-glow-primary/40';
+        return 'text-[#9CDCFE]';
       default:
-        return 'from-glow-primary/40 to-glow-secondary/40';
+        return 'text-[#CE9178]';
     }
   }, [category]);
 
@@ -72,7 +72,7 @@ function FloatingCodeItem({ text, delay, x, y, duration, category }: FloatingCod
       }}
       initial={{ opacity: 0, y: 20 }}
       animate={{
-        opacity: [0, 0.8, 0.8, 0],
+        opacity: [0, 0.7, 0.7, 0],
         y: [20, -30, -60, -100],
       }}
       transition={{
@@ -83,11 +83,7 @@ function FloatingCodeItem({ text, delay, x, y, duration, category }: FloatingCod
         times: [0, 0.3, 0.7, 1],
       }}
     >
-      <span
-        className={`bg-gradient-to-r ${gradientClass} bg-clip-text text-xs text-transparent sm:text-sm`}
-      >
-        {text}
-      </span>
+      <span className={`${colorClass} text-xs sm:text-sm`}>{text}</span>
     </motion.div>
   );
 }

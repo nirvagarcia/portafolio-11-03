@@ -4,6 +4,7 @@ import * as React from 'react';
 import Image from 'next/image';
 import { motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
+import { ChevronRight } from 'lucide-react';
 import { Section } from '@/components/ui/Section';
 import { TechDetailModal } from './TechDetailModal';
 import { getTechById } from '@/shared/data/stack';
@@ -37,12 +38,12 @@ interface PathData {
 }
 
 const LAYER_COLORS = {
-  ai: '#10B981',
-  frontend: '#A78BFA',
-  backend: '#818CF8',
-  data: '#60A5FA',
-  infrastructure: '#22D3EE',
-  testing: '#C084FC',
+  ai: 'hsl(var(--muted-foreground))',
+  frontend: 'hsl(var(--muted-foreground))',
+  backend: 'hsl(var(--muted-foreground))',
+  data: 'hsl(var(--muted-foreground))',
+  infrastructure: 'hsl(var(--muted-foreground))',
+  testing: 'hsl(var(--muted-foreground))',
 } as const;
 
 const diagramLayers: DiagramLayer[] = [
@@ -98,9 +99,9 @@ const diagramLayers: DiagramLayer[] = [
     color: LAYER_COLORS.infrastructure,
     techs: [
       { id: 'docker', icon: '/techstack/docker.png' },
-      { id: 'git', icon: '/techstack/git.png' },
       { id: 'gcp', icon: '/techstack/gcp.png' },
       { id: 'azure', icon: '/techstack/azure.png' },
+      { id: 'git', icon: '/techstack/git.png' },
       { id: 'githubActions', icon: '/techstack/githubActions.png' },
     ],
   },
@@ -150,6 +151,9 @@ const StackNode = React.memo(
   ) {
     const [hovered, setHovered] = React.useState(false);
 
+    const nodeBackgroundNormal = 'hsl(var(--card))';
+    const nodeBorderNormal = 'hsl(var(--border))';
+
     return (
       <motion.div
         ref={ref}
@@ -163,33 +167,32 @@ const StackNode = React.memo(
         transition={{ delay: index * 0.06, duration: 0.5 }}
       >
         <div
-          className="absolute -inset-2 rounded-full transition-all duration-500"
+          className="absolute -inset-1 rounded-full transition-all duration-500"
           style={{
-            background: layerColor,
-            filter: 'blur(16px)',
-            opacity: hovered ? 0.6 : 0,
-            transform: hovered ? 'scale(1.3)' : 'scale(1)',
+            background: 'hsl(var(--muted-foreground) / 0.3)',
+            filter: 'blur(6px)',
+            opacity: hovered ? 0.4 : 0,
+            transform: hovered ? 'scale(1.15)' : 'scale(1)',
           }}
         />
 
         <div
-          className="relative flex h-[56px] w-[56px] items-center justify-center rounded-full transition-all duration-300 sm:h-[64px] sm:w-[64px] lg:h-[72px] lg:w-[72px]"
+          className="relative flex h-[56px] w-[56px] items-center justify-center rounded-full border transition-all duration-300 sm:h-[64px] sm:w-[64px] lg:h-[72px] lg:w-[72px]"
           style={{
-            background: hovered
-              ? 'rgba(15, 23, 42, 0.95)'
-              : 'linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.85) 100%)',
-            border: `1.5px solid ${hovered ? layerColor : 'rgba(148, 163, 184, 0.15)'}`,
+            background: nodeBackgroundNormal,
+            borderColor: hovered ? layerColor : nodeBorderNormal,
+            borderWidth: '1.5px',
             boxShadow: hovered
-              ? `0 0 30px ${layerColor}35, 0 0 50px ${layerColor}15, inset 0 1px 2px rgba(255,255,255,0.08)`
-              : '0 4px 16px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255,255,255,0.05)',
+              ? `0 0 30px ${layerColor}35, 0 0 50px ${layerColor}15`
+              : '0 4px 16px rgba(0, 0, 0, 0.1)',
           }}
         >
           <div
             className="pointer-events-none absolute inset-0 rounded-full transition-opacity duration-300"
             style={{
               background:
-                'radial-gradient(circle at 30% 25%, rgba(255,255,255,0.12) 0%, transparent 60%)',
-              opacity: hovered ? 1 : 0.5,
+                'radial-gradient(circle at 30% 25%, rgba(255,255,255,0.08) 0%, transparent 60%)',
+              opacity: hovered ? 0.8 : 0.3,
             }}
           />
 
@@ -272,10 +275,10 @@ export function StackSection() {
       computed.push({
         id: `${conn.from}-${conn.to}`,
         d,
-        color: conn.primary ? '#8B5CF6' : '#475569',
-        width: conn.primary ? 2 : 1.2,
-        opacity: conn.primary ? 0.45 : 0.18,
-        glow: !!conn.primary,
+        color: 'hsl(var(--muted-foreground) / 0.3)',
+        width: conn.primary ? 1.5 : 1,
+        opacity: conn.primary ? 0.5 : 0.25,
+        glow: false,
       });
     });
 
@@ -305,21 +308,20 @@ export function StackSection() {
   }, [calculatePaths]);
 
   return (
-    <Section id="stack" className="relative py-20 lg:py-32">
-      <div className="mx-auto w-full max-w-[1500px] px-4 sm:px-6 lg:px-12">
+    <Section id="stack" className="relative py-12 sm:py-16 lg:py-20">
+      <div className="h-full">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="mb-16 text-center lg:mb-20"
+          className="mb-8 text-center lg:hidden"
         >
-          <h2 className="mb-3 text-4xl font-bold">{t('stack.title')}</h2>
-          <p className="mx-auto max-w-2xl text-sm text-muted-foreground lg:text-base">
-            {t('stack.subtitle')}
-          </p>
+          <h2 className="text-2xl font-bold sm:text-3xl">Tech Stack</h2>
+          <p className="mt-2 text-sm text-muted-foreground">{t('stack.subtitle')}</p>
         </motion.div>
 
-        <div ref={containerRef} className="relative">
+        <div ref={containerRef} className="relative px-4 sm:px-6 lg:px-0">
           {paths.length > 0 && (
             <svg
               className="pointer-events-none absolute inset-0 h-full w-full overflow-visible"
@@ -341,16 +343,25 @@ export function StackSection() {
                   fill="none"
                   stroke={path.color}
                   strokeWidth={path.width}
-                  strokeOpacity={path.opacity}
                   strokeLinecap="round"
                   filter={path.glow ? 'url(#pathGlow)' : undefined}
                   initial={{ pathLength: 0, opacity: 0 }}
-                  whileInView={{ pathLength: 1, opacity: 1 }}
-                  viewport={{ once: true }}
+                  animate={{
+                    pathLength: 1,
+                    opacity: [path.opacity, path.opacity * 0.3, path.opacity],
+                  }}
                   transition={{
-                    duration: 1.5,
-                    delay: 0.3 + i * 0.06,
-                    ease: 'easeInOut',
+                    pathLength: {
+                      duration: 1.5,
+                      delay: 0.3 + i * 0.06,
+                      ease: 'easeInOut',
+                    },
+                    opacity: {
+                      duration: 3,
+                      delay: 2 + i * 0.06,
+                      repeat: Infinity,
+                      ease: 'easeInOut',
+                    },
                   }}
                 />
               ))}
@@ -358,7 +369,7 @@ export function StackSection() {
           )}
 
           <div
-            className="relative mx-auto flex max-w-fit flex-col gap-y-10 lg:gap-y-14"
+            className="relative mx-auto flex max-w-fit flex-col gap-y-8 sm:gap-y-10 lg:gap-y-14"
             style={{ zIndex: 2 }}
           >
             {diagramLayers.map((layer, layerIndex) => (
@@ -372,19 +383,10 @@ export function StackSection() {
               >
                 <div className="hidden w-32 shrink-0 lg:block xl:w-40">
                   <div className="flex items-center justify-end gap-3">
-                    <p
-                      className="text-right text-xs font-medium leading-snug tracking-wide xl:text-sm"
-                      style={{ color: layer.color }}
-                    >
+                    <p className="text-right text-xs font-medium leading-snug tracking-wide text-muted-foreground xl:text-sm">
                       {t(layer.labelKey)}
                     </p>
-                    <div
-                      className="h-2 w-2 shrink-0 rounded-full"
-                      style={{
-                        background: layer.color,
-                        boxShadow: `0 0 10px ${layer.color}70, 0 0 20px ${layer.color}30`,
-                      }}
-                    />
+                    <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
                   </div>
                 </div>
 

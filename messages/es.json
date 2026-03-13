@@ -9,6 +9,9 @@
   "hero": {
     "name": "Nirvana Garcia",
     "role": "Ingeniera AI & Software",
+    "developer": "Desarrolladora AI & Software",
+    "projects": "Proyectos",
+    "readme": "README.md",
     "headline": "Construyendo soluciones inteligentes para los desafíos del mañana",
     "subheadline": "Creando experiencias de software premium con IA de vanguardia y tecnologías web modernas",
     "cta": "Explorar Portafolio"
@@ -24,6 +27,18 @@
   "contact": {
     "title": "Contacto",
     "subtitle": "Trabajemos juntos en tu próximo proyecto",
+    "connect": "Conectemos",
+    "email": "Correo",
+    "location": "Ubicación",
+    "locationValue": "Lima, Perú",
+    "responseTime": "Tiempo de Respuesta",
+    "responseValue": "Usualmente dentro de 24 horas",
+    "followMe": "Sígueme",
+    "funFact": "Dato curioso:",
+    "funFactText": "Respondo más rápido a mensajes con emojis de café",
+    "sendMessage": "Envíame un mensaje",
+    "sendMessageDesc": "Completa el formulario a continuación y te responderé lo antes posible.",
+    "preferEmail": "¿Prefieres email? Contáctame directamente en",
     "form": {
       "name": "Nombre",
       "namePlaceholder": "Tu nombre",
@@ -60,10 +75,12 @@
     "viewAll": "Ver todos los proyectos",
     "filterByName": "Filtrar por nombre",
     "filterByTech": "Filtrar por tecnología",
-    "allProjects": "Todos los Proyectos",
+    "allProjects": "Mis Proyectos",
     "noResults": "No se encontraron proyectos",
     "tryAdjusting": "Intenta ajustar tus filtros o búsqueda",
     "clearFilters": "Limpiar filtros",
+    "showMore": "Mostrar más",
+    "showLess": "Mostrar menos",
     "previous": "Página anterior",
     "next": "Página siguiente"
   },
@@ -99,12 +116,12 @@
     "subtitle": "Stack tecnológico de Nirvana organizado en capas arquitectónicas. Haz clic en cualquier tecnología para explorar mis casos de uso reales y ejemplos de código.",
     "cta": "Explora mi stack tecnológico.",
     "layers": {
-      "ai": "AI & Agents Layer",
-      "frontend": "Frontend Layer",
-      "backend": "Backend Layer",
-      "data": "Data Layer",
-      "infrastructure": "Infrastructure & DevOps Layer",
-      "testing": "Testing Layer"
+      "ai": "IA y Agentes",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "data": "Datos",
+      "infrastructure": "Infraestructura y DevOps",
+      "testing": "Testing y Calidad"
     },
     "langchain": {
       "narrative": "Implementando LangChain para orquestar agentes de IA avanzados y sistemas RAG. Utilizado en Bridge para coordinar modelos de lenguaje con bases de datos vectoriales, permitiendo respuestas contextuales y memoria de conversación. Facilita chains complejas que combinan recuperación de información, procesamiento de lenguaje natural y generación de respuestas."
@@ -244,7 +261,11 @@
   },
   "about": {
     "title": "Sobre Mí",
-    "description": "Ingeniera de IA y Software apasionada por construir soluciones innovadoras que combinan inteligencia artificial de vanguardia con experiencias web excepcionales.",
+    "subtitle": "Conóceme mejor",
+    "role": "Ingeniera AI & Software",
+    "description": "Ingeniera AI & Software apasionada por construir soluciones innovadoras que combinan inteligencia artificial de vanguardia con experiencias web excepcionales.",
+    "aboutMe": "Sobre Mí",
+    "experience": "Experiencia y Educación",
     "location": "Lima, Perú",
     "availability": "Disponible para proyectos",
     "availabilityStatus": "Disponible para proyectos",
@@ -259,6 +280,7 @@
   },
   "common": {
     "loading": "Cargando...",
-    "error": "Algo salió mal"
+    "error": "Algo salió mal",
+    "back": "Atrás"
   }
 }

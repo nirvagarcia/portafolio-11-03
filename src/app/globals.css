@@ -1,48 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
-    --surface: 0 0% 98%;
-    --surface-elevated: 0 0% 94%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --border: 214.3 31.8% 91.4%;
-    --primary: 222 47% 11%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222 47% 11%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222 47% 11%;
-    --glow-primary: 188 75% 40%;
-    --glow-secondary: 320 70% 45%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 15%;
+    --surface: 0 0% 96%;
+    --surface-elevated: 0 0% 93%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 45%;
+    --border: 0 0% 88%;
+    --primary: 0 0% 15%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 90%;
+    --secondary-foreground: 0 0% 15%;
+    --accent: 0 0% 90%;
+    --accent-foreground: 0 0% 15%;
+    --glow-primary: 0 0% 50%;
+    --glow-secondary: 0 0% 35%;
   }
 
   .dark {
-    --background: 222 47% 7%;
-    --foreground: 210 40% 98%;
-    --surface: 222 47% 10%;
-    --surface-elevated: 222 47% 11%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --border: 217.2 32.6% 17.5%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222 47% 11%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --glow-primary: 188 80% 60%;
-    --glow-secondary: 320 85% 65%;
+    --background: 220 15% 8%;
+    --foreground: 0 0% 95%;
+    --surface: 220 15% 11%;
+    --surface-elevated: 220 15% 14%;
+    --muted: 220 10% 20%;
+    --muted-foreground: 0 0% 65%;
+    --border: 220 10% 18%;
+    --primary: 0 0% 95%;
+    --primary-foreground: 220 15% 10%;
+    --secondary: 220 10% 20%;
+    --secondary-foreground: 0 0% 95%;
+    --accent: 220 10% 25%;
+    --accent-foreground: 0 0% 95%;
+    --glow-primary: 0 0% 88%;
+    --glow-secondary: 0 0% 75%;
   }
 }
 
 @layer base {
   * {
     @apply border-border;
+    font-family: 'Poppins', sans-serif;
   }
 
   body {
@@ -50,11 +53,17 @@
     font-feature-settings:
       'rlig' 1,
       'calt' 1;
+    font-family: 'Poppins', sans-serif;
   }
 
   html {
     @apply bg-background;
     scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'Courier New', Courier, monospace;
   }
 
   .motion-safe {

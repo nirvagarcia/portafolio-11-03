@@ -9,6 +9,9 @@
   "hero": {
     "name": "Nirvana Garcia",
     "role": "Engenheira de AI & Software",
+    "developer": "Desenvolvedora AI & Software",
+    "projects": "Projetos",
+    "readme": "README.md",
     "headline": "Construindo soluções inteligentes para os desafios de amanhã",
     "subheadline": "Criando experiências de software premium com IA de ponta e tecnologias web modernas",
     "cta": "Explorar Portfólio"
@@ -24,6 +27,18 @@
   "contact": {
     "title": "Entre em Contato",
     "subtitle": "Vamos trabalhar juntos no seu próximo projeto",
+    "connect": "Vamos Conectar",
+    "email": "E-mail",
+    "location": "Localização",
+    "locationValue": "Lima, Peru",
+    "responseTime": "Tempo de Resposta",
+    "responseValue": "Geralmente dentro de 24 horas",
+    "followMe": "Siga-me",
+    "funFact": "Fato curioso:",
+    "funFactText": "Respondo mais rápido a mensagens com emojis de café",
+    "sendMessage": "Envie-me uma mensagem",
+    "sendMessageDesc": "Preencha o formulário abaixo e entrarei em contato o mais breve possível.",
+    "preferEmail": "Prefere e-mail? Entre em contato diretamente em",
     "form": {
       "name": "Nome",
       "namePlaceholder": "Seu nome",
@@ -60,10 +75,12 @@
     "viewAll": "Ver todos os projetos",
     "filterByName": "Filtrar por nome",
     "filterByTech": "Filtrar por tecnologia",
-    "allProjects": "Todos os Projetos",
+    "allProjects": "Meus Projetos",
     "noResults": "Nenhum projeto encontrado",
     "tryAdjusting": "Tente ajustar seus filtros ou pesquisa",
     "clearFilters": "Limpar filtros",
+    "showMore": "Mostrar mais",
+    "showLess": "Mostrar menos",
     "previous": "Página anterior",
     "next": "Próxima página"
   },
@@ -99,12 +116,12 @@
     "subtitle": "Stack tecnológico de Nirvana organizado em camadas arquiteturais. Clique em qualquer tecnologia para explorar meus casos de uso reais e exemplos de código.",
     "cta": "Explore meu stack tecnológico.",
     "layers": {
-      "ai": "AI & Agents Layer",
-      "frontend": "Frontend Layer",
-      "backend": "Backend Layer",
-      "data": "Data Layer",
-      "infrastructure": "Infrastructure & DevOps Layer",
-      "testing": "Testing & Quality Assurance"
+      "ai": "IA e Agentes",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "data": "Dados",
+      "infrastructure": "Infraestrutura e DevOps",
+      "testing": "Testes e Qualidade"
     },
     "openai": {
       "narrative": "Integrando OpenAI API para capacidades de IA generativa de última geração. Implementado em múltiplos projetos como Bridge para tradução de LSP para texto e sistemas de chat conversacional. Utilizo GPT-4 Turbo para tarefas complexas de compreensão e geração de linguagem natural, aproveitando capacidades de function calling e streaming."
@@ -244,7 +261,11 @@
   },
   "about": {
     "title": "Sobre Mim",
-    "description": "Engenheira de IA e Software apaixonada por construir soluções inovadoras que combinam inteligência artificial de ponta com experiências web excepcionais.",
+    "subtitle": "Conheça-me melhor",
+    "role": "Engenheira de AI & Software",
+    "description": "Engenheira de AI & Software apaixonada por construir soluções inovadoras que combinam inteligência artificial de ponta com experiências web excepcionais.",
+    "aboutMe": "Sobre Mim",
+    "experience": "Experiência e Educação",
     "location": "Lima, Peru",
     "availability": "Disponível para projetos",
     "availabilityStatus": "Disponível para projetos",
@@ -259,6 +280,7 @@
   },
   "common": {
     "loading": "Carregando...",
-    "error": "Algo deu errado"
+    "error": "Algo deu errado",
+    "back": "Voltar"
   }
 }
