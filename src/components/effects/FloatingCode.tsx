@@ -67,8 +67,10 @@ export function FloatingCode() {
           style={{
             left: snippet.x,
             top: snippet.y,
+            opacity: 0,
             willChange: 'transform, opacity',
             animation: `float-code-up ${snippet.duration}s ${index * 0.7}s infinite linear`,
+            animationFillMode: 'backwards',
           }}
         >
           <span className={`${getColorClass(snippet.category)} text-xs sm:text-sm`}>
