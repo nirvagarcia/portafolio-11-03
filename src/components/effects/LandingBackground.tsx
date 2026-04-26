@@ -1,130 +1,54 @@
-'use client';
-
-import * as React from 'react';
-import { motion } from 'motion/react';
-
 export function LandingBackground() {
   return (
     <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background" />
 
-      <motion.div
-        className="absolute left-[10%] top-[8%] h-[500px] w-[500px] rounded-full bg-glow-primary/5 blur-[120px] dark:bg-glow-primary/35 sm:bg-glow-primary/0"
-        animate={{
-          x: [0, 50, 0],
-          y: [0, 30, 0],
-          scale: [1, 1.15, 1],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: 'linear',
-        }}
+      {/* Orb 1 — mobile: smaller + less blur, desktop: full size */}
+      <div
+        className="absolute left-[10%] top-[8%] h-[250px] w-[250px] rounded-full bg-glow-primary/5 blur-[60px] dark:bg-glow-primary/35 sm:h-[500px] sm:w-[500px] sm:bg-glow-primary/0 sm:blur-[120px]"
+        style={{ willChange: 'transform', animation: 'orb-drift-1 20s infinite linear' }}
       />
 
-      <motion.div
-        className="bg-glow-secondary/4 dark:bg-glow-secondary/28 absolute right-[15%] top-[15%] h-[600px] w-[600px] rounded-full blur-[130px] sm:bg-glow-secondary/0"
-        animate={{
-          x: [0, -40, 0],
-          y: [0, 50, 0],
-          scale: [1, 1.2, 1],
-        }}
-        transition={{
-          duration: 25,
-          repeat: Infinity,
-          ease: 'linear',
-          delay: 1,
-        }}
+      {/* Orb 2 — mobile: smaller + less blur, desktop: full size */}
+      <div
+        className="bg-glow-secondary/4 dark:bg-glow-secondary/28 absolute right-[15%] top-[15%] h-[280px] w-[280px] rounded-full blur-[65px] sm:h-[600px] sm:w-[600px] sm:bg-glow-secondary/0 sm:blur-[130px]"
+        style={{ willChange: 'transform', animation: 'orb-drift-2 25s 1s infinite linear' }}
       />
 
-      <motion.div
-        className="bg-glow-secondary/4 absolute left-[5%] top-[40%] h-[480px] w-[480px] rounded-full blur-[115px] dark:bg-glow-secondary/25 sm:bg-glow-secondary/0"
-        animate={{
-          x: [0, 45, 0],
-          y: [0, -35, 0],
-          scale: [1, 1.12, 1],
-        }}
-        transition={{
-          duration: 22,
-          repeat: Infinity,
-          ease: 'linear',
-          delay: 2,
-        }}
+      {/* Orb 3 — desktop only */}
+      <div
+        className="bg-glow-secondary/4 absolute left-[5%] top-[40%] hidden h-[480px] w-[480px] rounded-full blur-[115px] dark:bg-glow-secondary/25 sm:block sm:bg-glow-secondary/0"
+        style={{ willChange: 'transform', animation: 'orb-drift-3 22s 2s infinite linear' }}
       />
 
-      <motion.div
-        className="dark:bg-glow-primary/27 absolute right-[10%] top-[45%] h-[520px] w-[520px] rounded-full bg-glow-primary/5 blur-[125px] sm:bg-glow-primary/0"
-        animate={{
-          x: [0, -38, 0],
-          y: [0, 42, 0],
-          scale: [1, 1.18, 1],
-        }}
-        transition={{
-          duration: 23,
-          repeat: Infinity,
-          ease: 'linear',
-          delay: 3.5,
-        }}
+      {/* Orb 4 — mobile: smaller + less blur, desktop: full size */}
+      <div
+        className="dark:bg-glow-primary/27 absolute right-[10%] top-[45%] h-[260px] w-[260px] rounded-full bg-glow-primary/5 blur-[60px] sm:h-[520px] sm:w-[520px] sm:bg-glow-primary/0 sm:blur-[125px]"
+        style={{ willChange: 'transform', animation: 'orb-drift-4 23s 3.5s infinite linear' }}
       />
 
-      <motion.div
-        className="bg-glow-primary/4 absolute left-[60%] top-[65%] h-[450px] w-[450px] rounded-full blur-[110px] dark:bg-glow-primary/20 sm:bg-glow-primary/0"
-        animate={{
-          x: [0, -35, 0],
-          y: [0, -25, 0],
-          scale: [1, 0.95, 1],
-        }}
-        transition={{
-          duration: 19,
-          repeat: Infinity,
-          ease: 'linear',
-          delay: 5,
-        }}
+      {/* Orb 5 — desktop only */}
+      <div
+        className="bg-glow-primary/4 absolute left-[60%] top-[65%] hidden h-[450px] w-[450px] rounded-full blur-[110px] dark:bg-glow-primary/20 sm:block sm:bg-glow-primary/0"
+        style={{ willChange: 'transform', animation: 'orb-drift-5 19s 5s infinite linear' }}
       />
 
-      <motion.div
-        className="bg-glow-secondary/3 dark:bg-glow-secondary/18 absolute left-[20%] top-[72%] h-[430px] w-[430px] rounded-full blur-[105px] sm:bg-glow-secondary/0"
-        animate={{
-          x: [0, 40, 0],
-          y: [0, -30, 0],
-          scale: [1, 1.1, 1],
-        }}
-        transition={{
-          duration: 21,
-          repeat: Infinity,
-          ease: 'linear',
-          delay: 6,
-        }}
+      {/* Orb 6 — desktop only */}
+      <div
+        className="bg-glow-secondary/3 dark:bg-glow-secondary/18 absolute left-[20%] top-[72%] hidden h-[430px] w-[430px] rounded-full blur-[105px] sm:block sm:bg-glow-secondary/0"
+        style={{ willChange: 'transform', animation: 'orb-drift-6 21s 6s infinite linear' }}
       />
 
-      <motion.div
-        className="bg-glow-primary/3 dark:bg-glow-primary/16 absolute right-[25%] top-[88%] h-[380px] w-[380px] rounded-full blur-[95px] sm:bg-glow-primary/0"
-        animate={{
-          x: [0, -30, 0],
-          y: [0, 20, 0],
-          scale: [1, 1.08, 1],
-        }}
-        transition={{
-          duration: 18,
-          repeat: Infinity,
-          ease: 'linear',
-          delay: 7,
-        }}
+      {/* Orb 7 — desktop only */}
+      <div
+        className="bg-glow-primary/3 dark:bg-glow-primary/16 absolute right-[25%] top-[88%] hidden h-[380px] w-[380px] rounded-full blur-[95px] sm:block sm:bg-glow-primary/0"
+        style={{ willChange: 'transform', animation: 'orb-drift-7 18s 7s infinite linear' }}
       />
 
-      <motion.div
-        className="bg-glow-secondary/3 dark:bg-glow-secondary/17 absolute left-[45%] top-[82%] h-[400px] w-[400px] rounded-full blur-[100px] sm:bg-glow-secondary/0"
-        animate={{
-          x: [0, 32, 0],
-          y: [0, -22, 0],
-          scale: [1, 1.06, 1],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: 'linear',
-          delay: 8,
-        }}
+      {/* Orb 8 — desktop only */}
+      <div
+        className="bg-glow-secondary/3 dark:bg-glow-secondary/17 absolute left-[45%] top-[82%] hidden h-[400px] w-[400px] rounded-full blur-[100px] sm:block sm:bg-glow-secondary/0"
+        style={{ willChange: 'transform', animation: 'orb-drift-8 20s 8s infinite linear' }}
       />
 
       <div

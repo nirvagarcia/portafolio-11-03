@@ -6,8 +6,16 @@ import { motion } from 'motion/react';
 export function CustomCursor() {
   const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
   const [isPointer, setIsPointer] = React.useState(false);
+  const [isMobile, setIsMobile] = React.useState(false);
 
   React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768 || 'ontouchstart' in window);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
@@ -26,10 +34,13 @@ export function CustomCursor() {
     window.addEventListener('mouseover', handleMouseOver);
 
     return () => {
+      window.removeEventListener('resize', checkMobile);
       window.removeEventListener('mousemove', updateMousePosition);
       window.removeEventListener('mouseover', handleMouseOver);
     };
   }, []);
+
+  if (isMobile) return null;
 
   return (
     <>

@@ -88,6 +88,15 @@
     "previous": "Previous page",
     "next": "Next page"
   },
+  "dmtsg": {
+    "description": "Modern web platform for DMTSG company with responsive design and optimized user experience."
+  },
+  "altrix": {
+    "description": "Corporate website for Altrix company with professional design and comprehensive service showcase."
+  },
+  "villahospedajes": {
+    "description": "Accommodation booking platform with integrated reservation system and user-friendly interface."
+  },
   "bridge": {
     "description": "Peruvian Sign Language (LSP) translation to text and voice using Machine Learning and Gen AI Tools."
   },

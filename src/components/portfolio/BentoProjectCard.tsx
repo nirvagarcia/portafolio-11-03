@@ -18,6 +18,18 @@ interface BentoProjectCardProps {
 export function BentoProjectCard({ project, index, size = 'medium' }: BentoProjectCardProps) {
   const t = useTranslations();
   const [isHovered, setIsHovered] = React.useState(false);
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const showFullContent = isMobile || isHovered;
 
   return (
     <motion.div
@@ -42,7 +54,7 @@ export function BentoProjectCard({ project, index, size = 'medium' }: BentoProje
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: isHovered ? 1 : 0 }}
+          animate={{ opacity: showFullContent ? 1 : 0 }}
           transition={{ duration: 0.3 }}
           className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-black/40 backdrop-blur-[2px]"
         />
@@ -76,8 +88,8 @@ export function BentoProjectCard({ project, index, size = 'medium' }: BentoProje
           <motion.div
             initial={{ opacity: 1, y: 0 }}
             animate={{
-              opacity: isHovered ? 0 : 1,
-              y: isHovered ? 10 : 0,
+              opacity: showFullContent ? 0 : 1,
+              y: showFullContent ? 10 : 0,
             }}
             transition={{ duration: 0.3 }}
             className="flex flex-wrap gap-2"
@@ -96,8 +108,8 @@ export function BentoProjectCard({ project, index, size = 'medium' }: BentoProje
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{
-              opacity: isHovered ? 1 : 0,
-              y: isHovered ? 0 : 20,
+              opacity: showFullContent ? 1 : 0,
+              y: showFullContent ? 0 : 20,
             }}
             transition={{ duration: 0.3, delay: 0.1 }}
             className="space-y-4"
@@ -125,17 +137,17 @@ export function BentoProjectCard({ project, index, size = 'medium' }: BentoProje
             </div>
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
-              <Link
+              {/* <Link
                 href={`/projects/${project.id}`}
                 className="group/btn flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-white backdrop-blur-md transition-all hover:bg-white/20"
               >
                 <Clock className="h-4 w-4 transition-transform group-hover/btn:rotate-12" />
                 <span>{t('projects.history')}</span>
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5" />
-              </Link>
+              </Link> */}
 
               <div className="flex items-center gap-2">
-                {project.codeUrl && (
+                {/* {project.codeUrl && (
                   <a
                     href={project.codeUrl}
                     target="_blank"
@@ -145,7 +157,7 @@ export function BentoProjectCard({ project, index, size = 'medium' }: BentoProje
                   >
                     <Github className="h-4 w-4" />
                   </a>
-                )}
+                )} */}
                 {project.demoUrl && (
                   <a
                     href={project.demoUrl}
@@ -165,7 +177,7 @@ export function BentoProjectCard({ project, index, size = 'medium' }: BentoProje
 
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: isHovered ? 1 : 0 }}
+        animate={{ opacity: showFullContent ? 1 : 0 }}
         transition={{ duration: 0.3 }}
         className="pointer-events-none absolute inset-0 rounded-3xl ring-2 ring-glow-primary/30"
       />

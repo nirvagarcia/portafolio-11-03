@@ -11,7 +11,7 @@ export function AboutSection() {
   const t = useTranslations('about');
 
   const handleDownloadCV = () => {
-    window.open('/documents/Nirvana García Vásquez - CV 2026 (ES).pdf', '_blank');
+    window.open('/documents/Nirvana García Vásquez - CV.pdf', '_blank');
   };
 
   return (

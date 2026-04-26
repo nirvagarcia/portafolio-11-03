@@ -1,13 +1,16 @@
 'use client';
 
-import * as React from 'react';
-import { motion } from 'motion/react';
-
 const codeSnippets = [
   { text: 'model.fit(X_train, y_train)', category: 'ml', x: '8%', y: '15%', duration: 8 },
   { text: 'from transformers import AutoModel', category: 'ml', x: '88%', y: '10%', duration: 10 },
   { text: 'await prisma.user.create()', category: 'backend', x: '12%', y: '65%', duration: 9 },
-  { text: 'torch.nn.functional.softmax()', category: 'ml', x: '82%', y: '70%', duration: 11 },
+  {
+    text: 'torch.nn.functional.softmax()',
+    category: 'ml',
+    x: '82%',
+    y: '70%',
+    duration: 11,
+  },
   {
     text: 'const [state, dispatch] = useReducer()',
     category: 'frontend',
@@ -15,6 +18,7 @@ const codeSnippets = [
     y: '35%',
     duration: 7,
   },
+  // Desktop-only from here (index >= 5)
   { text: 'docker compose up --build', category: 'devops', x: '75%', y: '45%', duration: 9 },
   {
     text: 'app.post("/api/predict", async)',
@@ -36,71 +40,41 @@ const codeSnippets = [
   { text: 'git rebase -i HEAD~3', category: 'devops', x: '55%', y: '25%', duration: 9 },
 ];
 
-interface FloatingCodeItemProps {
-  text: string;
-  delay: number;
-  x: string;
-  y: string;
-  duration: number;
-  category: string;
-}
+const MOBILE_VISIBLE_COUNT = 5;
 
-function FloatingCodeItem({ text, delay, x, y, duration, category }: FloatingCodeItemProps) {
-  const colorClass = React.useMemo(() => {
-    switch (category) {
-      case 'ml':
-        return 'text-gray-500 dark:text-gray-400';
-      case 'backend':
-        return 'text-gray-600 dark:text-gray-300';
-      case 'frontend':
-        return 'text-gray-400 dark:text-gray-500';
-      case 'devops':
-        return 'text-gray-500 dark:text-gray-400';
-      default:
-        return 'text-gray-600 dark:text-gray-300';
-    }
-  }, [category]);
-
-  return (
-    <motion.div
-      className="absolute select-none whitespace-nowrap font-mono"
-      style={{
-        left: x,
-        top: y,
-        willChange: 'transform',
-        transform: 'translateZ(0)',
-      }}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{
-        opacity: [0, 0.7, 0.7, 0],
-        y: [20, -30, -60, -100],
-      }}
-      transition={{
-        duration,
-        delay,
-        repeat: Infinity,
-        ease: 'linear',
-        times: [0, 0.3, 0.7, 1],
-      }}
-    >
-      <span className={`${colorClass} text-xs sm:text-sm`}>{text}</span>
-    </motion.div>
-  );
+function getColorClass(category: string) {
+  switch (category) {
+    case 'ml':
+      return 'text-gray-500 dark:text-gray-400';
+    case 'backend':
+      return 'text-gray-600 dark:text-gray-300';
+    case 'frontend':
+      return 'text-gray-400 dark:text-gray-500';
+    case 'devops':
+      return 'text-gray-500 dark:text-gray-400';
+    default:
+      return 'text-gray-600 dark:text-gray-300';
+  }
 }
 
 export function FloatingCode() {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
       {codeSnippets.map((snippet, index) => (
-        <FloatingCodeItem
+        <div
           key={snippet.text}
-          text={snippet.text}
-          category={snippet.category}
-          delay={index * 0.7}
-          x={snippet.x}
-          y={snippet.y}
-          duration={snippet.duration}
-        />
+          className={`absolute select-none whitespace-nowrap font-mono ${index >= MOBILE_VISIBLE_COUNT ? 'hidden sm:block' : ''}`}
+          style={{
+            left: snippet.x,
+            top: snippet.y,
+            willChange: 'transform, opacity',
+            animation: `float-code-up ${snippet.duration}s ${index * 0.7}s infinite linear`,
+          }}
+        >
+          <span className={`${getColorClass(snippet.category)} text-xs sm:text-sm`}>
+            {snippet.text}
+          </span>
+        </div>
       ))}
     </div>
   );

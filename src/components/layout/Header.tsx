@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { ThemeToggle } from './ThemeToggle';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { Navbar } from './Navbar';
+import { MobileMenu } from './MobileMenu';
 import { Container } from '@/components/ui/Container';
 import { cn } from '@/shared/lib/utils';
 
@@ -66,7 +67,9 @@ export function Header({ locale }: HeaderProps) {
             </span>
           </button>
 
-          <Navbar locale={locale} />
+          <div className="hidden md:block">
+            <Navbar locale={locale} />
+          </div>
 
           <div
             className={cn(
@@ -76,6 +79,10 @@ export function Header({ locale }: HeaderProps) {
           >
             <ThemeToggle />
             <LanguageSwitcher currentLocale={locale} />
+
+            <div className="md:hidden">
+              <MobileMenu locale={locale} />
+            </div>
           </div>
         </div>
       </Container>

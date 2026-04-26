@@ -167,7 +167,7 @@ export function AllProjectsClient() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="grid auto-rows-[280px] grid-cols-1 gap-4 sm:auto-rows-[320px] md:grid-cols-2 lg:auto-rows-[380px] lg:grid-cols-4 lg:gap-6"
+                className="grid auto-rows-[400px] grid-cols-1 gap-4 sm:auto-rows-[420px] md:grid-cols-2 lg:auto-rows-[380px] lg:grid-cols-4 lg:gap-6"
               >
                 {filteredProjects.map((project, index) => {
                   let className = '';

@@ -54,16 +54,16 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           </div>
 
           <div className="flex items-center gap-3 pt-2">
-            <Link
+            {/* <Link
               href={`/projects/${project.id}`}
               className="group/btn flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-glow-secondary"
             >
               <Clock className="h-4 w-4 transition-transform group-hover/btn:rotate-12" />
               <span>{t('projects.history')}</span>
-            </Link>
+            </Link> */}
 
             <div className="ml-auto flex items-center gap-2">
-              {project.codeUrl && (
+              {/* {project.codeUrl && (
                 <a
                   href={project.codeUrl}
                   target="_blank"
@@ -73,7 +73,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 >
                   <Github className="h-4 w-4" />
                 </a>
-              )}
+              )} */}
               {project.demoUrl && (
                 <a
                   href={project.demoUrl}

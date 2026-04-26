@@ -88,6 +88,15 @@
     "previous": "Página anterior",
     "next": "Página siguiente"
   },
+  "dmtsg": {
+    "description": "Plataforma web moderna para la empresa DMTSG con diseño responsivo y experiencia de usuario optimizada."
+  },
+  "altrix": {
+    "description": "Sitio web corporativo para la empresa Altrix con diseño profesional y muestra completa de servicios."
+  },
+  "villahospedajes": {
+    "description": "Plataforma de reservas de hospedaje con sistema de reservas integrado e interfaz amigable."
+  },
   "bridge": {
     "description": "Traducción de Lenguaje de Señas Peruano (LSP) a texto y voz mediante Machine Learning y Herramientas de Gen AI."
   },
