@@ -2,11 +2,20 @@ import type { Project } from '@/shared/types/project';
 
 export const projects: Project[] = [
   {
+    id: 'villahospedajes',
+    title: 'Villa Hospedajes',
+    description: 'villahospedajes.description',
+    image: '/projects/VillaHospedajes-Hero.png',
+    tags: ['Vue.js', 'TypeScript', 'Node.js', 'MongoDB', 'Web Development'],
+    demoUrl: 'https://www.villahospedajes.com',
+    featured: true,
+  },
+  {
     id: 'dmt',
     title: 'DMT',
     description: 'dmtsg.description',
     image: '/projects/DMT-Hero.jpg',
-    tags: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+    tags: ['React.js', 'TypeScript', 'Tailwind CSS', 'Web Development'],
     demoUrl: 'https://dmtsg.com',
     featured: true,
   },
@@ -15,19 +24,11 @@ export const projects: Project[] = [
     title: 'Altrix',
     description: 'altrix.description',
     image: '/projects/Altrix-Hero.png',
-    tags: ['WordPress', 'PHP', 'JavaScript', 'Web Development'],
+    tags: ['Next.js', 'JavaScript', 'Web Development'],
     demoUrl: 'https://altrix.com.pe/',
     featured: true,
   },
-  {
-    id: 'villahospedajes',
-    title: 'Villa Hospedajes',
-    description: 'villahospedajes.description',
-    image: '/projects/VillaHospedajes-Hero.png',
-    tags: ['React.js', 'Node.js', 'MongoDB', 'Express'],
-    demoUrl: 'https://www.villahospedajes.com',
-    featured: true,
-  },
+
   {
     id: 'bridge',
     title: 'Bridge',

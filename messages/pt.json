@@ -4,7 +4,11 @@
     "projects": "Projetos",
     "stack": "Stack",
     "about": "Sobre mim",
-    "contact": "Contato"
+    "contact": "Contato",
+    "homeCommand": "Inicio",
+    "projectsCommand": "Projetos",
+    "aboutCommand": "SOBRE_MIM.md",
+    "contactCommand": "CONTATO.md"
   },
   "hero": {
     "name": "Nirvana Garcia",
@@ -77,7 +81,7 @@
     "viewCode": "Ver código",
     "viewDemo": "Ver demo",
     "viewAll": "Ver todos os projetos",
-    "filterByName": "Filtrar por nome",
+    "filterByName": "Buscar por nome",
     "filterByTech": "Filtrar por tecnologia",
     "allProjects": "Meus Projetos",
     "noResults": "Nenhum projeto encontrado",
@@ -89,13 +93,13 @@
     "next": "Próxima página"
   },
   "dmtsg": {
-    "description": "Plataforma web moderna para a empresa DMTSG com design responsivo e experiência de usuário otimizada."
+    "description": "Portal corporativo focado na geração de leads e na exposição técnica das capacidades da DMT Servicios Generales SAC (Moquegua, Peru)."
   },
   "altrix": {
     "description": "Website corporativo para a empresa Altrix com design profissional e apresentação completa de serviços."
   },
   "villahospedajes": {
-    "description": "Plataforma de reservas de hospedagem com sistema de reservas integrado e interface amigável."
+    "description": "Reserva de hospedagens na Villa Hospedagens (Peru) com sistema de reservas, chatbot e interface amigável."
   },
   "bridge": {
     "description": "Tradução de Linguagem de Sinais Peruana (LSP) para texto e voz usando Machine Learning e Ferramentas de Gen AI."
@@ -137,97 +141,97 @@
       "testing": "Testes e Qualidade"
     },
     "openai": {
-      "narrative": "Integrando OpenAI API para capacidades de IA generativa de última geração. Implementado em múltiplos projetos como Bridge para tradução de LSP para texto e sistemas de chat conversacional. Utilizo GPT-4 Turbo para tarefas complexas de compreensão e geração de linguagem natural, aproveitando capacidades de function calling e streaming."
+      "narrative": "O OpenAI oferece APIs poderosas para IA generativa, incluindo GPT-4 para compreensão de linguagem natural, DALL-E para geração de imagens e Whisper para reconhecimento de voz. Amplamente utilizado para chatbots, geração de conteúdo, assistentes de código e busca inteligente."
     },
     "watsonx": {
-      "narrative": "Plataforma IBM Watsonx para IA empresarial em escala. Projetada para cenários complexos que requerem deployment on-premise, governança e compliance regulatório. Experiência em integrar modelos IBM Granite e implementar soluções RAG focadas em negócios com controle rigoroso sobre dados e modelos."
+      "narrative": "IBM Watsonx é uma plataforma de IA empresarial para treinar, ajustar e implantar modelos de machine learning em escala. Projetada para indústrias reguladas que requerem implantação on-premise, governança de dados e conformidade regulatória. Suporta modelos fundacionais como IBM Granite."
     },
     "ollama": {
-      "narrative": "Ollama para executar LLMs localmente durante desenvolvimento e testes. Essencial para iteração rápida sem custos de APIs cloud. Utilizo Llama 3, Mistral e Code Llama para prototipagem, desenvolvimento offline e experimentação com diferentes estratégias de prompt engineering antes do deployment na nuvem."
+      "narrative": "Ollama permite executar modelos de linguagem grandes localmente na sua máquina. Suporta modelos como Llama 3, Mistral e Code Llama para desenvolvimento offline, prototipagem e experimentação sem custos de APIs cloud. Ideal para aplicações sensíveis à privacidade e iteração rápida."
     },
     "langchain": {
-      "narrative": "Implementando LangChain para orquestrar agentes de IA avançados e sistemas RAG. Usado no Bridge para coordenar modelos de linguagem com bancos de dados vetoriais, permitindo respostas contextuais e memória de conversação. Facilita chains complexas que combinam recuperação de informação, processamento de linguagem natural e geração de respostas."
+      "narrative": "LangChain é um framework para construir aplicações potencializadas por modelos de linguagem. Fornece ferramentas para encadear chamadas a LLMs, implementar RAG (Retrieval-Augmented Generation), gerenciar memória de conversação e orquestrar agentes de IA com capacidades de uso de ferramentas."
     },
     "huggingface": {
-      "narrative": "Utilizando Hugging Face para acessar modelos de ML pré-treinados e fine-tuning de transformers. Plataforma essencial para experimentação com modelos open-source, embeddings de texto e deployment de modelos custom. Implementado em pipelines de NLP para classificação, análise de sentimentos e extração de informação."
+      "narrative": "Hugging Face é a plataforma open-source líder para modelos e datasets de machine learning. Hospeda milhares de modelos pré-treinados para NLP, visão computacional e processamento de áudio. Essencial para fine-tuning de transformers, geração de embeddings e implantação de modelos ML personalizados."
     },
     "react": {
-      "narrative": "React como base para construir interfaces de usuário componíveis e reativas. Domínio de hooks (useState, useEffect, useCallback, useMemo) para gestão de estado e efeitos colaterais. Implemento patterns como compound components, render props e custom hooks para criar código reutilizável e mantível. Experiência com Context API e libraries de gestão de estado."
+      "narrative": "React é uma biblioteca JavaScript para construir interfaces de usuário baseadas em componentes. Utiliza um DOM virtual para renderização eficiente, hooks para gerenciamento de estado e efeitos, e fluxo de dados unidirecional. A base das aplicações web modernas com um ecossistema massivo."
     },
     "nextjs": {
-      "narrative": "Next.js 15 com App Router é meu framework principal para aplicações web modernas. Aproveito Server Components para otimizar o carregamento inicial, Server Actions para mutações sem API endpoints, e o sistema de roteamento baseado em arquivos. Implemento SSR, ISR e SSG conforme as necessidades de cada projeto, alcançando experiências ultra-rápidas com SEO otimizado."
+      "narrative": "Next.js é um framework React para aplicações web de nível produção. Oferece renderização do lado do servidor (SSR), geração de sites estáticos (SSG), regeneração estática incremental (ISR) e o App Router com React Server Components para performance e SEO ótimos."
     },
     "typescript": {
-      "narrative": "TypeScript como linguagem principal para desenvolvimento frontend e backend, garantindo type safety e melhor developer experience. Utilizo tipos avançados (generics, conditional types, mapped types), interfaces robustas e strict mode para prevenir bugs durante o desenvolvimento. Implemento type guards, utility types e custom types para APIs type-safe."
+      "narrative": "TypeScript adiciona tipagem estática ao JavaScript, detectando erros em tempo de compilação e melhorando a experiência de desenvolvimento. Suporta genéricos, tipos união, interfaces e inferência de tipos avançada. O padrão para aplicações JavaScript em grande escala."
     },
     "javascript": {
-      "narrative": "JavaScript ES6+ como fundação do desenvolvimento web moderno. Conhecimento profundo de programação funcional, closures, promises, async/await e event loop. Experiência com manipulação DOM, Web APIs e otimização de performance. Essencial tanto para desenvolvimento client-side quanto server-side com Node.js."
+      "narrative": "JavaScript é a linguagem da web, executando em navegadores e servidores via Node.js. As funcionalidades do ES6+ incluem arrow functions, destructuring, async/await, módulos e a API Promise. A base do desenvolvimento tanto frontend quanto backend."
     },
     "nodejs": {
-      "narrative": "Node.js como runtime para JavaScript backend, permitindo desenvolvimento full-stack com uma única linguagem. Experiência com event loop, streams e otimização de performance. Implemento arquiteturas escaláveis com clustering, manipulação eficiente de I/O assíncrono, e aproveito o rico ecossistema do npm."
+      "narrative": "Node.js é um runtime JavaScript construído sobre o motor V8 do Chrome para desenvolvimento do lado do servidor. Sua arquitetura não-bloqueante e orientada a eventos se destaca no gerenciamento de conexões concorrentes. Impulsionado pelo npm, o maior ecossistema de pacotes do mundo."
     },
     "nestjs": {
-      "narrative": "NestJS para arquiteturas backend escaláveis e mantíveis com TypeScript. Aproveito seu sistema de módulos, dependency injection e decorators para construir aplicações enterprise-grade. Implemento guards para autenticação, interceptors para logging, pipes para validação e filters para tratamento de erros. Ideal para microserviços e APIs GraphQL."
+      "narrative": "NestJS é um framework TypeScript-first para construir aplicações escaláveis do lado do servidor. Inspirado no Angular, usa decoradores, injeção de dependências e arquitetura modular. Suporta REST, GraphQL, WebSockets e padrões de microsserviços nativamente."
     },
     "fastapi": {
-      "narrative": "FastAPI para construir APIs de alto desempenho com Python. Framework ideal para projetos de ML/AI graças à sua excelente integração com o ecossistema Python. Implemento endpoints async para máxima concorrência, validação automática com Pydantic, documentação auto-gerada com OpenAPI, e dependency injection para código limpo e testável."
+      "narrative": "FastAPI é um framework Python moderno para construir APIs de alto desempenho. Inclui documentação OpenAPI automática, validação de tipos com Pydantic, suporte async/await e injeção de dependências. Um dos frameworks Python mais rápidos disponíveis."
     },
     "flask": {
-      "narrative": "Flask como micro-framework para Python, ideal para aplicações pequenas e APIs de ML. Altamente flexível com arquitetura minimalista que permite controle completo sobre componentes. Experiência em construir extensões custom, integração com Scikit-learn/PyTorch, e deployment de serviços leves em containers."
+      "narrative": "Flask é um micro-framework Python leve para aplicações web e APIs. Seu design minimalista oferece flexibilidade e controle, ideal para serviços pequenos, servir modelos de ML e prototipagem rápida. Extensível através de um rico ecossistema de plugins."
     },
     "python": {
-      "narrative": "Python como linguagem principal para Machine Learning, Data Science e APIs backend. Experiência profunda com o ecossistema científico (NumPy, Pandas, Scikit-learn) e frameworks de deep learning. Código limpo seguindo PEP 8, type hints para melhor manutenibilidade, e async/await para operações concorrentes."
+      "narrative": "Python é uma linguagem versátil que domina machine learning, data science e desenvolvimento backend. Seu ecossistema inclui NumPy, Pandas, Scikit-learn, PyTorch e TensorFlow. Conhecido pela legibilidade, sintaxe limpa e filosofia baterias incluídas."
     },
     "django": {
-      "narrative": "Django como framework full-stack batteries-included para aplicações web robustas e seguras. Experiência com ORM, painel admin, sistema de autenticação e middleware. Implemento APIs REST com Django REST Framework, integração com Celery para tarefas async, e aproveito seu excelente ecossistema para desenvolvimento full-stack rápido."
+      "narrative": "Django é um framework Python de alto nível que segue a filosofia baterias incluídas. Fornece ORM, interface de administração, sistema de autenticação e roteamento de URL nativamente. Ideal para desenvolvimento rápido de aplicações web seguras baseadas em banco de dados."
     },
     "springboot": {
-      "narrative": "Spring Boot para aplicações empresariais com Java. Framework production-ready com servidor embutido, auto-configuração e ecossistema abrangente. Experiência em implementar microserviços com Spring Cloud, segurança com Spring Security, acesso a dados com Spring Data JPA, e deployment em arquiteturas cloud-native."
+      "narrative": "Spring Boot simplifica o desenvolvimento empresarial Java com auto-configuração, servidores embarcados e recursos prontos para produção. Parte do ecossistema Spring, suporta microsserviços, segurança, acesso a dados e aplicações cloud-native em escala."
     },
     "express": {
-      "narrative": "Express.js como framework minimalista para Node.js, perfeito para APIs flexíveis e leves. Domínio de middleware para autenticação, logging, tratamento de erros e validação. Implemento APIs RESTful e GraphQL, integração com múltiplos bancos de dados, e deployment de microserviços escaláveis com Express."
+      "narrative": "Express.js é um framework web minimalista e flexível para Node.js. Fornece uma camada fina de middleware para tratar requisições HTTP, roteamento e construção de APIs RESTful. O framework Node.js mais popular com um vasto ecossistema de plugins."
     },
     "postgresql": {
-      "narrative": "PostgreSQL como banco de dados relacional principal para aplicações em produção. Expertise em design de schemas complexos, índices otimizados, queries avançadas com CTEs e window functions. Implemento extensões como PostGIS para dados geoespaciais no Rentstate, json/jsonb para dados semi-estruturados, e full-text search. Competente em tuning de performance e estratégias de backup."
+      "narrative": "PostgreSQL é um poderoso banco de dados relacional open-source conhecido por sua confiabilidade e riqueza de recursos. Suporta JSON/JSONB, busca full-text, consultas geoespaciais (PostGIS), CTEs, window functions e estratégias de indexação avançadas."
     },
     "mongodb": {
-      "narrative": "MongoDB para bancos de dados NoSQL flexíveis com schema baseado em documentos. Ideal para prototipagem rápida e aplicações com modelos de dados em evolução. Experiência com aggregation pipelines, estratégias de indexação, replica sets e scaling horizontal com sharding. Usado em projetos que requerem schemas flexíveis e alta taxa de escritas."
+      "narrative": "MongoDB é um banco de dados NoSQL orientado a documentos que armazena dados como documentos flexíveis tipo JSON. Destaca-se em prototipagem rápida, escalamento horizontal com sharding e tratamento de dados não estruturados. Inclui pipelines de agregação e consultas geoespaciais."
     },
     "prisma": {
-      "narrative": "Prisma como ORM moderno para TypeScript, oferecendo type-safety completo desde o banco de dados até a aplicação. Utilizo Prisma Client para queries type-safe, Prisma Migrate para controle de versões de schema, e Prisma Studio para administração visual. Implemento relações complexas, cascatas e otimizações com select/include estratégicos."
+      "narrative": "Prisma é um ORM TypeScript de nova geração que fornece type-safety completo do banco de dados à aplicação. Inclui Prisma Client para consultas type-safe, Prisma Migrate para versionamento de schema e Prisma Studio para gestão visual de banco de dados."
     },
     "chromadb": {
-      "narrative": "ChromaDB como banco de dados vetorial para sistemas RAG (Retrieval-Augmented Generation) e semantic search. Implementado no Bridge para armazenar embeddings de documentos LSP e realizar buscas de similaridade ultra-rápidas. Permite combinar memória de longo prazo com capacidades de IA generativa, fundamental para agentes conversacionais contextuais."
+      "narrative": "ChromaDB é um banco de dados vetorial open-source para aplicações de IA. Armazena embeddings para busca semântica e sistemas RAG (Retrieval-Augmented Generation). Permite buscas por similaridade, memória de longo prazo para LLMs e integração com LangChain."
     },
     "redis": {
-      "narrative": "Redis para caching de alto desempenho, sessões de usuário e pub/sub em tempo real. Implemento estratégias de cache-aside, write-through e rate limiting. Utilizado para reduzir latência em consultas frequentes, armazenar tokens de sessão e como message broker para arquiteturas event-driven."
+      "narrative": "Redis é um armazenamento de dados em memória usado para caching, gerenciamento de sessões, análise em tempo real e brokering de mensagens. Suporta estruturas de dados como strings, hashes, listas, sets e sorted sets com latência sub-milissegundo."
     },
     "gcp": {
-      "narrative": "Google Cloud Platform para infraestrutura production-grade. Experiência com Cloud Run para containers serverless, Cloud SQL para databases gerenciadas, Cloud Storage para assets estáticos, e Cloud Build para CI/CD. Implemento arquiteturas escaláveis com load balancing, auto-scaling e monitoramento com Cloud Logging e Monitoring."
+      "narrative": "Google Cloud Platform oferece infraestrutura cloud escalável incluindo Cloud Run para containers serverless, Cloud SQL para bancos de dados gerenciados, BigQuery para análise e Vertex AI para machine learning. Confiável para cargas de trabalho em produção de alta disponibilidade."
     },
     "azure": {
-      "narrative": "Microsoft Azure para soluções cloud empresariais. Experiência com Azure Functions para serverless, Azure SQL Database, Azure DevOps para CI/CD, e Azure Active Directory para gestão de identidades. Implemento arquiteturas híbridas, integração com ecossistema Microsoft, e aproveito Azure Cognitive Services para capacidades de IA."
+      "narrative": "Microsoft Azure fornece serviços cloud empresariais incluindo computação, bancos de dados, IA e DevOps. Inclui Azure Functions para serverless, Azure Active Directory para identidade e Azure Cognitive Services para IA. Integração profunda com o ecossistema Microsoft."
     },
     "git": {
-      "narrative": "Git como sistema de controle de versões para colaboração e gestão de código fonte. Domínio de workflows avançados com feature branches, rebasing, cherry-picking e conflict resolution. Implemento conventional commits, pre-commit hooks com Husky e lint-staged, e estratégias de branching como Git Flow ou trunk-based development."
+      "narrative": "Git é o sistema de controle de versão distribuído padrão da indústria. Permite branching, merging, rebasing e fluxos de trabalho colaborativos como Git Flow e trunk-based development. Essencial para colaboração em equipe e gestão do histórico de código."
     },
     "githubActions": {
-      "narrative": "GitHub Actions para CI/CD automatizado e workflows personalizados. Crio pipelines que executam testes, linting, build e deployment automático em cada push. Implemento matrix builds para testing cross-platform, caching de dependencies para velocidade, e secrets management seguro. Integração com Vercel, GCP e outros serviços cloud."
+      "narrative": "GitHub Actions é uma plataforma CI/CD integrada diretamente nos repositórios GitHub. Automatiza fluxos de build, teste e implantação com pipelines definidos em YAML. Suporta matrix builds, caching, gestão de secrets e milhares de ações da comunidade."
     },
     "docker": {
-      "narrative": "Docker para containerização e consistência entre ambientes de desenvolvimento e produção. Crio Dockerfiles otimizados com multi-stage builds para reduzir tamanho de imagens. Implemento docker-compose para orquestração local de microserviços, configuração de redes e volumes. CI/CD integrado com build automatizado e deployment para cloud."
+      "narrative": "Docker permite a containerização para ambientes de desenvolvimento e produção consistentes. Multi-stage builds otimizam o tamanho das imagens, docker-compose orquestra stacks multi-serviço e registros de containers distribuem imagens. O padrão para implantação moderna."
     },
     "vercel": {
-      "narrative": "Vercel como plataforma de deployment para aplicações Next.js com zero-config. Aproveito edge functions para latência mínima global, preview deployments para cada PR, e analytics integrado. Configuração de domínios custom, variáveis de ambiente por ambiente, e rollbacks instantâneos. Ideal para frontend moderno com DX excepcional."
+      "narrative": "Vercel é uma plataforma de implantação otimizada para frameworks frontend, especialmente Next.js. Oferece edge functions para latência mínima, preview deployments para pull requests, análises integradas e rollbacks instantâneos. Implantação zero-config com DX excepcional."
     },
     "jest": {
-      "narrative": "Jest como framework de testes principal para JavaScript e TypeScript. Experiência zero-config com mocking integrado, code coverage e snapshot testing. Implemento testes unitários para componentes e utilitários, testes de integração para APIs, e uso matchers custom para assertions específicas do domínio."
+      "narrative": "Jest é um framework de testes JavaScript com configuração zero. Fornece mocking integrado, cobertura de código, snapshot testing e execução paralela de testes. O padrão para testar aplicações React, serviços Node.js e projetos TypeScript."
     },
     "pytest": {
-      "narrative": "PyTest para testing em Python com sintaxe limpa e expressiva. Domínio de fixtures para setup de testes, parametrização para múltiplos cenários, e plugins como pytest-asyncio para código async. Implemento test suites abrangentes com estrutura arrange-act-assert clara e alcanço alta cobertura de código para serviços backend."
+      "narrative": "PyTest é o framework de testes Python de facto com sintaxe limpa e expressiva. Inclui fixtures poderosas, parametrização de testes, suporte async e um rico ecossistema de plugins. Ideal para testes unitários, de integração e end-to-end."
     },
     "cypress": {
-      "narrative": "Cypress para testes end-to-end de aplicações web com experiência excepcional para desenvolvedores. Automação em navegador real com time-travel debugging, espera automática e network stubbing. Implemento testes de fluxos críticos de usuário, testes de regressão visual, e integração em pipelines de CI/CD para garantia contínua de qualidade."
+      "narrative": "Cypress é um framework moderno de testes end-to-end para aplicações web. Executa testes diretamente no navegador com time-travel debugging, espera automática e interceptação de rede. Fornece testes rápidos e confiáveis com excelente experiência de desenvolvimento."
     },
     "usage": {
       "bridge": "Bridge (Tradução LSP)",
@@ -266,11 +270,7 @@
   },
   "techModal": {
     "title": "Detalhe da Tecnologia",
-    "role": "Engenheira de AI & Software",
-    "usage": "Uso",
-    "usageExamples": "exemplos selecionados",
-    "codePreview": "Prévia de Código",
-    "syntaxHighlight": "realce de sintaxe"
+    "codePreview": "Exemplo de Código"
   },
   "about": {
     "title": "Sobre Mim",

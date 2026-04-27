@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import { motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
@@ -20,6 +21,24 @@ export function HeroSection() {
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-transparent pb-0"
     >
       <FloatingCode />
+
+      {/* 3D Character Image - naciendo desde abajo, encima de las letras */}
+      <motion.div
+        className="pointer-events-none absolute bottom-0 left-1/2 z-[5]"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        style={{ transform: 'translateX(-50%)' }}
+      >
+        <Image
+          src="/images/Nirvana-3D-Full.png"
+          alt="Nirvana 3D Character"
+          width={600}
+          height={800}
+          className="h-auto max-h-[50vh] w-auto object-contain opacity-40 dark:opacity-30 md:max-h-[70vh]"
+          priority
+        />
+      </motion.div>
 
       <Container className="relative z-10 flex flex-1 items-center">
         <div className="flex w-full flex-col items-center justify-center px-6 pt-12 sm:px-6">

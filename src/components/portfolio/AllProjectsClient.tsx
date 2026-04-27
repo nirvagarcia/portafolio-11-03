@@ -81,25 +81,29 @@ export function AllProjectsClient() {
 
             <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center">
               <div className="relative max-w-lg flex-1">
-                <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/60" />
+                <span className="pointer-events-none absolute inset-y-0 left-0 z-10 flex items-center pl-4">
+                  <Search className="h-4 w-4 text-muted-foreground/60" />
+                </span>
                 <input
                   type="text"
                   placeholder={t('filterByName')}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="h-10 w-full rounded-full border border-border/50 bg-surface/50 px-11 text-sm text-foreground backdrop-blur-sm transition-all placeholder:text-muted-foreground/60 focus:border-glow-primary focus:bg-surface focus:outline-none focus:ring-2 focus:ring-glow-primary/10"
+                  className="h-10 w-full rounded-full border border-border/50 bg-surface/50 pl-11 pr-10 text-sm text-foreground backdrop-blur-sm transition-all placeholder:text-muted-foreground/60 focus:border-glow-primary focus:bg-surface focus:outline-none focus:ring-2 focus:ring-glow-primary/10"
                 />
-                {searchQuery && (
-                  <motion.button
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.8 }}
-                    onClick={() => setSearchQuery('')}
-                    className="absolute right-3 top-1/2 flex h-5 w-5 -translate-y-1/2 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-                  >
-                    <X className="h-3.5 w-3.5" />
-                  </motion.button>
-                )}
+                <AnimatePresence>
+                  {searchQuery && (
+                    <motion.button
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.8 }}
+                      onClick={() => setSearchQuery('')}
+                      className="absolute inset-y-0 right-0 flex items-center pr-4 text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      <X className="h-4 w-4" />
+                    </motion.button>
+                  )}
+                </AnimatePresence>
               </div>
 
               <button

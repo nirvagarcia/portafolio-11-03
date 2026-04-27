@@ -4,6 +4,7 @@ export interface Tech {
   category: string;
   layer: 'ai' | 'frontend' | 'backend' | 'data' | 'infrastructure' | 'testing';
   icon?: string;
+  highlights: string[];
   usageExamples: string[];
   narrative: string;
   codePreview?: {
